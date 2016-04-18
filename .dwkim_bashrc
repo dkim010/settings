@@ -1,0 +1,10 @@
+# dwkim custom bashrc
+PS1='${debian_chroot:+($debian_chroot)}\[\033[00;36m\]\u\[\033[00;33m\]@\[\033[00;32m\]\h\[\033[00;33m\]:\[\033[00;34m\]\w\[\033[00m\]\$ '
+
+BIN=~/bin
+export PATH=$PATH:$BIN
+
+ANDROID=~/opt/android-studio/bin
+export PATH=$PATH:$ANDROID
+
+
