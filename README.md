@@ -1,4 +1,4 @@
-# vim setting
+# development setting
 ### Created at 19-Apr-16 by Dongwon Kim (dkim010@gmail.com)
 * plugin
     * tlist
