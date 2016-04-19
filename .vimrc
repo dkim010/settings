@@ -1,18 +1,24 @@
 scripte utf-8
+
 " vim: set fenc=utf-8 tw=0: "
 " 파일의 첫부분에 위의 2줄을 꼭 남길것.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM rc
 
-
 filetype plugin on
 syntax on
-
 
 "##### vim
 set all&                " 모든 옵션 원래대로 복원
 set nocompatible        " nocp | vim default기능들을 사용함
 set hi=1000             " 명령어 기록을 남길 갯수 지정
+
+"##### 80 characters column width
+set textwidth=80
+set colorcolumn=+1
+hi ColorColumn guibg=#000000 guifg=white ctermbg=0
+hi Search cterm=NONE ctermfg=grey
+let &colorcolumn=join(range(81,999),",")
 
 "##### view
 set number              " nu   | 줄 번호 붙임
@@ -20,16 +26,10 @@ set nuw=4               " 줄 번호 너비 설정
 set ruler               " ru   | 상태표시줄에 커서 위치 보여줌
 set showmatch           " 매치되는 괄호의 반대쪽을 보여줌
 set title               " 현재 편집중인 파일 표시
-set statusline==\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\  " Status 표기
+set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\  " Status 표기
 set showcmd             " 명령어를 상태라인에 보여줌
 set sc                  " 완성중인 명령을 표시
 set cursorline          " 현재 라인 강조
-
-"##### 80 characters column width
-hi Normal guibg=#32322f ctermbg=236
-hi NonText guibg=#32322f ctermbg=236
-hi ColorColumn guibg=#101010 ctermbg=0
-let &colorcolumn=join(range(1,80),",")
 
 "##### format
 set enc=utf-8

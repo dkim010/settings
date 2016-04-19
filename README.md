@@ -4,6 +4,8 @@
     * tlist
     * ctags
 * vimrc
+    * 80 column width
+        * use transparent background
 * bin
     * xfind
     * gfind
