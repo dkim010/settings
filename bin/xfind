@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 parm="";
 for par in $@; do
@@ -8,4 +8,10 @@ start=`expr ${#1} + 2`
 len=`expr ${#parm} - ${#1}`
 key=${parm:$start:$len}
 
-find -E $1 -regex '(Makefile|.*(c|h|py|erl|java|js|jsx|cpp|aidl))' -type f | xargs grep --color=auto -n "${key}"
+FILE_TYPE='(Makefile|.*(c|h|py|erl|java|js|jsx|cpp|aidl))'
+if [[ $OSTYPE == *'darwin'* ]]; then # mac
+    find -E $1 -regex $FILE_TYPE -type f | xargs grep --color=auto -n "${key}"
+elif [[ $OSTYPE == *'linux'* ]]; then # linux
+    find $1 -regex $FILE_TYPE -type f | xargs grep --color=auto -n "${key}"
+    echo linux
+fi
