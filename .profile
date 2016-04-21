@@ -8,7 +8,4 @@ alias ll='ls -al'
 
 # PATH
 BIN=~/bin
-ANDROID=~/opt/android-studio/bin:~/Android/Sdk/platform-tools
-export PATH=$PATH:$BIN:$ANDROID
-
-
+export PATH=$PATH:$BIN
