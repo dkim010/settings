@@ -53,7 +53,7 @@ set ic                  " 찾기에서 대소문자 구별 않음
 "##### plugin: Tlist
 map <F5> :TlistToggle<CR>
 let Tlist_Inc_Winwidth=0
-let Tlist_WinWidth = 20
+let Tlist_WinWidth = 40
 let Tlist_Exit_OnlyWindow=1
 
 "set mps+=<:>           " 괄호짝 찾기 기능에 사용자 괄호 종류 추가
