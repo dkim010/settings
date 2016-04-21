@@ -30,6 +30,7 @@ set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\  " Status 표기
 set showcmd             " 명령어를 상태라인에 보여줌
 set sc                  " 완성중인 명령을 표시
 set cursorline          " 현재 라인 강조
+set laststatus=2
 
 "##### format
 set enc=utf-8
