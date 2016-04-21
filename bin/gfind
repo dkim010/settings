@@ -1,0 +1,12 @@
+#!/bin/sh
+
+parm="";
+for par in $@; do
+	parm="$parm $par"
+done
+
+start=`expr ${#1} + 2`
+len=`expr ${#parm} - ${#1}`
+key=${parm:$start:$len}
+
+find $1 -type f | xargs grep --color=auto -n "${key}"
