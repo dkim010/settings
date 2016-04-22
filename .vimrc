@@ -7,7 +7,6 @@ scripte utf-8
 
 filetype plugin on
 syntax on
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 "##### vim
 set all&                " 모든 옵션 원래대로 복원
@@ -37,16 +36,17 @@ set laststatus=2
 
 "##### format
 set enc=utf-8
-set expandtab           " et    | tab -> space 변환
-set tabstop=4           " ts    | '\t' 문자를 몇칸으로 보일지 결정
-set shiftwidth=4        " sw    | >> , << 사용시 들여쓰기 간격
-set softtabstop=4       " sts   | <TAB>키를 눌렀을때 표시되는 간격
 set bs=eol,start,indent " backspace 사용
-
-"##### intent
-set smartindent         " si    | smart 자동 들여쓰기
-set autoindent          " ai    | 자동 들여쓰기
-set cindent             " ci    | c언어 자동 들여쓰기
+set si ai et            " smartindent autoindent expandtab
+" smartindent   |       " si    | smart 자동 들여쓰기
+" autoindent    |       " ai    | 자동 들여쓰기
+" expandtab     |       " et    | tab -> space 변환
+" cindent       |       " cin   | c언어 자동 들여쓰기 : 사용하지 않음
+set ts=4 sts=4 sw=4     " tastop softtabstop shiftwidth
+" tabstop       |       " ts    | '\t' 문자를 몇칸으로 보일지 결정
+" softtabstop   |       " sts   | <TAB>키를 눌렀을때 표시되는 간격
+" shiftwidth    |       " sw    | >> , << 사용시 들여쓰기 간격
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 
 "##### search
 set hlsearch            " hls   |검색 결과 하이라이트

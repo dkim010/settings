@@ -8,10 +8,20 @@ start=`expr ${#1} + 2`
 len=`expr ${#parm} - ${#1}`
 key=${parm:$start:$len}
 
-FILE_TYPE='(Makefile|.*(c|h|py|erl|java|js|jsx|cpp|aidl))'
+# filter & distinguish bash
+FILE_TYPES='\.c \.h \.py \.erl \.java \.js \.jsx \.cpp \.aidl' # including Makefile
+
 if [[ $OSTYPE == *'darwin'* ]]; then # mac
-    find -E $1 -regex $FILE_TYPE -type f | xargs grep --color=auto -n "${key}"
+    FILE_TYPE='(Makefile|.*(c|h|py|erl|java|js|jsx|cpp|aidl))'
+    find -E $1 -regex $FILE_TYPE -type f \
+        | xargs grep --color=auto -n "${key}"
+
 elif [[ $OSTYPE == *'linux'* ]]; then # linux
-    find $1 -regex $FILE_TYPE -type f | xargs grep --color=auto -n "${key}"
-    echo linux
+    FILE_TYPE='.*(Makefile'
+    for t in $FILE_TYPES; do
+        FILE_TYPE+='|'$t
+    done
+    FILE_TYPE+=')'
+    find $1 -regextype posix-egrep -regex "$FILE_TYPE" -type f \
+        | xargs grep --color=auto -n "${key}"
 fi
