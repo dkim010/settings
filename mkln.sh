@@ -5,7 +5,7 @@
 #################################################
 
 ### conf files
-FILES='.vimrc .tmux.conf'
+FILES='.vimrc .tmux.conf .gitconfig'
 for f in $FILES; do
     ln -s $PWD/$f ~/$f
 done
