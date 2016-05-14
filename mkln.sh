@@ -4,8 +4,11 @@
 #### created at 2016.05.01
 #################################################
 
-### vimrc
-ln -s $PWD/.vimrc ~/
+### conf files
+FILES='.vimrc .tmux.conf'
+for f in $FILES; do
+    ln -s $PWD/$f ~/$f
+done
 
 ### find scripts
 mkdir -p ~/bin
