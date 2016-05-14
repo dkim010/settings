@@ -67,7 +67,7 @@ map <F5> :TlistToggle<CR>
 let Tlist_Compact_Format=0
 let Tlist_Highlight_Tag_On_BufEnter=1
 let Tlist_Inc_Winwidth=0
-let Tlist_WinWidth = 22
+let Tlist_WinWidth = 30
 let Tlist_Exit_OnlyWindow=1
 
 "set mps+=<:>           " 괄호짝 찾기 기능에 사용자 괄호 종류 추가
