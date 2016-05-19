@@ -3,15 +3,17 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[00;36m\]\u\[\033[00;33m\]@\[\033[0
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-export GREP_OPTIONS='--color=auto'
-
-alias ls='ls -vGF'
-alias ll='ls -alvGF'
+#export GREP_OPTIONS='--color=auto'
 
 # PATH
 BIN=~/bin
 export PATH=$PATH:$BIN
 
-if [[ $OSTYPE == *'darwin'* ]]; then # mac
-alias hgrep='iconv -c -f UTF-8-MAC -t UTF-8 | grep '
+alias ls='ls -vGF'
+alias l='\ls -vGF'
+alias ll='ls -alvGF'
+alias lh='\ls -alvGF | hh'
+
+if [[ $OSTYPE == *'darwin'* ]]; then
+alias hh='iconv -c -f UTF-8-MAC -t UTF-8'
 fi
