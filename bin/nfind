@@ -9,4 +9,8 @@ start=`expr ${#1} + 2`
 len=`expr ${#parm} - ${#1}`
 key=${parm:$start:$len}
 
-find $1 | grep --color=auto "${key}"
+if [[ $OSTYPE == *'darwin'* ]]; then # mac
+    find $1 | iconv -c -f UTF-8-MAC -t UTF-8 | grep --color=auto "${key}"
+elif [[ $OSTYPE == *'linux'* ]]; then # linux
+    find $1 | grep --color=auto "${key}"
+fi

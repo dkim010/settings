@@ -11,3 +11,7 @@ alias ll='ls -alvGF'
 # PATH
 BIN=~/bin
 export PATH=$PATH:$BIN
+
+if [[ $OSTYPE == *'darwin'* ]]; then # mac
+alias hgrep='iconv -c -f UTF-8-MAC -t UTF-8 | grep '
+fi
