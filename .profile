@@ -3,8 +3,10 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[00;36m\]\u\[\033[00;33m\]@\[\033[0
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+export GREP_OPTIONS='--color=auto'
 
-alias ll='ls -al'
+alias ls='ls -vGF'
+alias ll='ls -alvGF'
 
 # PATH
 BIN=~/bin
