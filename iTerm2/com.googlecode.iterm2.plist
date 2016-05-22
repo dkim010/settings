@@ -140,9 +140,11 @@
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
 	<key>HideScrollbar</key>
-	<false/>
+	<true/>
 	<key>HideTab</key>
 	<false/>
+	<key>HideTabCloseButton</key>
+	<true/>
 	<key>HighlightTabLabels</key>
 	<true/>
 	<key>HotKeyBookmark</key>
@@ -192,7 +194,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>322</string>
+		<string>307</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -204,11 +206,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 226 606 456 0 0 1280 777 </string>
+	<string>269 284 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>353 288 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>46 0 1234 777 0 0 1280 777 </string>
+	<string>131 73 585 473 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -850,7 +852,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/dwkim</string>
 		</dict>
@@ -858,7 +860,11 @@
 	<key>NoSyncInstallationId</key>
 	<string>762EAEF0-D2F2-4770-809D-684671A864A8</string>
 	<key>NoSyncLastTipTime</key>
-	<real>484875773.64887202</real>
+	<real>485363966.98774397</real>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -867,9 +873,14 @@
 	<real>484686554.74309403</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>484686554.74363703</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -937,7 +948,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-05-13T23:43:00Z</date>
+	<date>2016-05-20T16:19:42Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -977,6 +988,6 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>2.9.20160426</string>
+	<string>2.9.20160510</string>
 </dict>
 </plist>
