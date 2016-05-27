@@ -1,10 +1,3 @@
 #!/bin/bash
 TMUX_NAME=dwkim
 tmux new-session -A -s $TMUX_NAME
-
-#check=`tmux ls | grep dwkim`
-#if [ ${#check} -gt 0 ]; then
-#    tmux a -t dwkim
-#else
-#    tmux -f ~/dwkim/.tmux.conf
-#fi
