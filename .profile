@@ -3,16 +3,17 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[00;36m\]\u\[\033[00;33m\]@\[\033[0
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-#export GREP_OPTIONS='--color=auto'
+export LS_COLORS="di=1;34;40:ln=1;35;40:so=1;31;40:pi=1;33;40:ex=1;32;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
+export GREP_OPTIONS='--color=auto'
 
 # PATH
 BIN=~/bin
 export PATH=$PATH:$BIN
 
-alias ls='ls -vGF'
-alias l='\ls -vGF'
-alias ll='ls -alvGF'
-alias lh='\ls -alvGF | hh'
+alias ls='ls --color'
+alias l='ls'
+alias ll='ls -alh'
+alias lh='ll | hh'
 
 if [[ $OSTYPE == *'darwin'* ]]; then
 alias hh='iconv -c -f UTF-8-MAC -t UTF-8'
