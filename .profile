@@ -10,7 +10,9 @@ export GREP_OPTIONS='--color=auto'
 BIN=~/bin
 export PATH=$PATH:$BIN
 
+if [[ $OSTYPE == *'linux'* ]]; then # linux
 alias ls='ls --color'
+fi
 alias l='ls'
 alias ll='ls -alh'
 alias lh='ll | hh'
