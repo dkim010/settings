@@ -12,7 +12,7 @@ done
 
 ### find scripts
 mkdir -p ~/bin
-FILES='gfind nfind xfind ofind'
+FILES='gfind nfind xfind ofind atx'
 for f in $FILES; do
     ln -s $PWD/bin/$f ~/bin/$f
 done
