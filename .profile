@@ -20,3 +20,10 @@ alias lh='ll | hh'
 if [[ $OSTYPE == *'darwin'* ]]; then
 alias hh='iconv -c -f UTF-8-MAC -t UTF-8'
 fi
+
+## bash-completion
+if [[ $OSTYPE == *'darwin'* ]]; then
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+fi
