@@ -10,19 +10,18 @@ export GREP_OPTIONS='--color=auto'
 BIN=~/bin
 export PATH=$PATH:$BIN
 
+alias l='ls'
+alias ll='ls -alh'
+
 if [[ $OSTYPE == *'linux'* ]]; then # linux
 alias ls='ls --color'
 fi
-alias l='ls'
-alias ll='ls -alh'
+
+if [[ $OSTYPE == *'darwin'* ]]; then
+## mac fs
 alias lh='ll | hh'
-
-if [[ $OSTYPE == *'darwin'* ]]; then
 alias hh='iconv -c -f UTF-8-MAC -t UTF-8'
-fi
-
 ## bash-completion
-if [[ $OSTYPE == *'darwin'* ]]; then
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
