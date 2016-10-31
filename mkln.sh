@@ -12,7 +12,7 @@ done
 
 ### scripts
 mkdir -p ~/bin
-FILES='gfind nfind xfind ofind atx uenv'
+FILES='gfind nfind xfind ofind atx uenv adb_conn'
 for f in $FILES; do
     ln -s $PWD/bin/$f ~/bin/$f
 done

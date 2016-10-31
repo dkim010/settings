@@ -26,3 +26,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
 fi
+
+## python
+alias python='python2.7'
