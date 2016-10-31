@@ -1,0 +1,7 @@
+#!/bin/bash
+BASHRC=~/users/dwkim/dev/settings/.profile
+VIMRC=~/users/dwkim/dev/settings/.vimrc
+USER_BIN=~/users/dwkim/bin
+export PATH=$PATH:$USER_BIN
+source $BASHRC
+alias vim='vim -u $VIMRC'

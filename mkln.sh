@@ -10,9 +10,9 @@ for f in $FILES; do
     ln -s $PWD/$f ~/$f
 done
 
-### find scripts
+### scripts
 mkdir -p ~/bin
-FILES='gfind nfind xfind ofind atx'
+FILES='gfind nfind xfind ofind atx uenv'
 for f in $FILES; do
     ln -s $PWD/bin/$f ~/bin/$f
 done
