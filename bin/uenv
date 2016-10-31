@@ -7,6 +7,6 @@ USER_HOME=~/users/dwkim/
 VIMRC=$USER_HOME/.vimrc
 BIN=$USER_HOME/bin
 
-export PATH=$PATH:$USER_BIN
+export PATH=$PATH:$BIN
 source $BASHRC
 alias vim='vim -u $VIMRC'
