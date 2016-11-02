@@ -5,7 +5,6 @@
 #################################################
 
 USER_HOME=~/.
-USER_HOME=~/users/dwkim
 
 ### conf files
 FILES='.vim .vimrc .tmux.conf .gitconfig'
