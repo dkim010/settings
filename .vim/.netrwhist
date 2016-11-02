@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/Naver/work/projects/fitness/fitness-sensing-android/wear'
+let g:netrw_dirhist_2='/Users/Naver/work/projects/fitness/fitness-sensing-android'
+let g:netrw_dirhist_3='/Users/Naver/work/projects/fitness'
+let g:netrw_dirhist_4='/Users/Naver/work/projects'
+let g:netrw_dirhist_5='/Users/Naver/work/projects/fitness'
+let g:netrw_dirhist_6='/Users/Naver/work/projects/fitness/fitness-sensing'
