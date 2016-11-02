@@ -5,6 +5,7 @@ scripte utf-8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM rc
 
+execute pathogen#infect()
 filetype plugin on
 syntax on
 
