@@ -7,8 +7,8 @@ export LS_COLORS="di=1;34;40:ln=1;35;40:so=1;31;40:pi=1;33;40:ex=1;32;40:bd=34;4
 export GREP_OPTIONS='--color=auto'
 
 # PATH
-BIN=~/bin
-export PATH=$PATH:$BIN
+[[ ":$PATH:" != *":*/dwkim/:"* ]] && \
+    export PATH=$PATH:~/bin
 
 alias l='ls'
 alias ll='ls -alh'
