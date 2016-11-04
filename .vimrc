@@ -18,11 +18,11 @@ set hi=1000             " 명령어 기록을 남길 갯수 지정
 set t_Co=256
 :colorscheme elflord 
 "hi Comment ctermfg=LightBlue
-hi Search cterm=NONE ctermfg=grey ctermbg=yellow
-hi Visual cterm=NONE ctermfg=grey ctermbg=yellow
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
-execute "set colorcolumn=" . join(range(81,335), ',')
-
+"hi Search cterm=NONE ctermfg=grey ctermbg=yellow
+"hi Visual cterm=NONE ctermfg=grey ctermbg=yellow
+"highlight ColorColumn ctermbg=235 guibg=#2c2d27
+"execute "set colorcolumn=" . join(range(81,335), ',')
+"
 "##### view
 set number              " nu   | 줄 번호 붙임
 set nuw=4               " 줄 번호 너비 설정

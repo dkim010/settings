@@ -10,7 +10,7 @@ set -e
 TMUX_VERSION=2.2
 
 # create our directories
-mkdir -p $HOME/local $HOME/tmux_tmp
+mkdir -p $HOME/local/bin $HOME/tmux_tmp
 cd $HOME/tmux_tmp
 
 # download source files for tmux, libevent, and ncurses
@@ -47,7 +47,7 @@ tar xvzf tmux-${TMUX_VERSION}.tar.gz
 cd tmux-${TMUX_VERSION}
 ./configure CFLAGS="-I$HOME/local/include -I$HOME/local/include/ncurses" LDFLAGS="-L$HOME/local/lib -L$HOME/local/include/ncurses -L$HOME/local/include"
 CPPFLAGS="-I$HOME/local/include -I$HOME/local/include/ncurses" LDFLAGS="-static -L$HOME/local/include -L$HOME/local/include/ncurses -L$HOME/local/lib" make
-cp tmux $HOME/local/bin
+cp tmux $HOME/local/bin/
 cd ..
 
 # cleanup
