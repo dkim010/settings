@@ -20,9 +20,10 @@ POWERLINE_SHELL=0
 ############################################################
 ## powerline: https://github.com/powerline/powerline
 if [ $POWERLINE -eq 1 ]; then
-    PIP_ROOT=`pip show powerline-status | grep Location | sed -e "s/.* //"`
     if [ ${#PIP_ROOT} -eq 0 ]; then
         pip install --user powerline-status
+
+        PIP_ROOT=`pip show powerline-status | grep Location | sed -e "s/.* //"`
         PL_SH=$PIP_ROOT/powerline/bindings/bash/powerline.sh
 
         if [[ $OSTYPE == *'darwin'* ]]; then # mac
