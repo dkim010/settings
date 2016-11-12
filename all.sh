@@ -1,22 +1,9 @@
 ## command: . all.sh
-
-## create dirs
-mkdir -p /home1/irteam/users/dwkim
+## Requirements: Before installation, you should check your $HOME.
 
 ## git clone
-cd /home1/irteam/users/dwkim
+cd ~/
 git clone https://github.com/dkim010/settings.git
-
-## profile setting
-cp settings/scripts/func_profile ~/
-echo "if [ -f /home1/irteam/func_profile ]; then
-    . /home1/irteam/func_profile
-fi" >> ~/.bashrc
-echo ". ~/settings/.profile" > .bash_profile
-
-## profile
-. ~/.bashrc
-profile dwkim
 
 ## execute runs
 cd ~/settings
