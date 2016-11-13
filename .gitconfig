@@ -6,7 +6,10 @@
 [diff]
     tool = vimdiff
 [color]
-    ui = true
+    ui = auto
+    branch = auto
+    interactive = auto
+    status = auto
 [alias]
     st = status
     stat = status
