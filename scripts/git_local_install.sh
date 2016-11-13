@@ -18,7 +18,7 @@ GIT_FILENAME=v${GIT_VERSION}
 curl -LO ${REL}/${GIT_FILENAME}.tar.gz
 
 # extract files, configure, and compile
-GIT_DIRNAME=git-2.10.2
+GIT_DIRNAME=git-${GIT_VERSION}
 tar xvzf ${GIT_FILENAME}.tar.gz
 cd ${GIT_DIRNAME}
 make configure
