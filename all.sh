@@ -2,7 +2,6 @@
 ## Requirements: Before installation, you should check your $HOME.
 
 ## execute runs
-cd ~/settings
 ./set_profile.sh
 ./mkln.sh
 
