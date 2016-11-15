@@ -3,6 +3,7 @@
 
 ## execute runs
 cd ~/settings
+./set_profile.sh
 ./mkln.sh
 
 ## install local packages
