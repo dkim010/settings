@@ -82,5 +82,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'vim-erlang/vim-erlang-tags'
+Plugin 'jimenezrick/vimerl'
 call vundle#end()            " required
 
