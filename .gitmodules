@@ -1,0 +1,15 @@
+[submodule ".vim/bundle/vim-erlang-tags"]
+	path = .vim/bundle/vim-erlang-tags
+	url = https://github.com/vim-erlang/vim-erlang-tags.git
+[submodule ".vim/bundle/vim-railscasts-theme"]
+	path = .vim/bundle/vim-railscasts-theme
+	url = https://github.com/jpo/vim-railscasts-theme.git
+[submodule ".vim/bundle/vim-scala"]
+	path = .vim/bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
+[submodule ".vim/bundle/vimerl"]
+	path = .vim/bundle/vimerl
+	url = https://github.com/jimenezrick/vimerl.git
+[submodule ".vim/bundle/Vundle.vim"]
+	path = .vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
