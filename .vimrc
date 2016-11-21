@@ -15,8 +15,9 @@ set nocompatible        " nocp | vim default기능들을 사용함
 set hi=1000             " 명령어 기록을 남길 갯수 지정
 
 "##### color setting
-set t_Co=256
-:colorscheme elflord 
+"set t_Co=256
+":colorscheme elflord
+:colorscheme railscasts
 "hi Comment ctermfg=LightBlue
 "hi Search cterm=NONE ctermfg=grey ctermbg=yellow
 "hi Visual cterm=NONE ctermfg=grey ctermbg=yellow
@@ -84,5 +85,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'jimenezrick/vimerl'
+Plugin 'jpo/vim-railscasts-theme'
 call vundle#end()            " required
 
