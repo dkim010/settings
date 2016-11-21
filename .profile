@@ -29,3 +29,6 @@ fi
 
 ## python
 alias python='python2.7'
+
+## screen-256color && tmux window name
+export PROMPT_COMMAND=''
