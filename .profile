@@ -1,5 +1,5 @@
 ## dwkim custom bashrc
-PS1='${debian_chroot:+($debian_chroot)}\[\033[00;36m\]\u\[\033[00;33m\]@\[\033[00;32m\]\h\[\033[00;33m\]:\[\033[00;36m\]\w\[\033[00m\]\$ '
+SETTING_PATH=$(dirname "${BASH_SOURCE[0]}")
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -32,3 +32,10 @@ alias python='python2.7'
 
 ## screen-256color && tmux window name
 export PROMPT_COMMAND=''
+
+## PS
+#PS1='${debian_chroot:+($debian_chroot)}\[\033[00;36m\]\u\[\033[00;33m\]@\[\033[00;32m\]\h\[\033[00;33m\]:\[\033[00;36m\]\w\[\033[00m\]\$ '
+source $SETTING_PATH/.git-prompt.sh
+source $SETTING_PATH/.git-completion.bash
+PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi` \[\033[01;30m\]\h\[\033[01;34m\] \w\[\033[35m\]$(__git_ps1 " %s") \[\033[01;31m\]\n>\[\033[00m\] '
+
