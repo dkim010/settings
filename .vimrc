@@ -14,10 +14,15 @@ set all&                " 모든 옵션 원래대로 복원
 set nocompatible        " nocp | vim default기능들을 사용함
 set hi=1000             " 명령어 기록을 남길 갯수 지정
 
-"##### color setting
+"##### colorscheme setting
 "set t_Co=256
-":colorscheme elflord
-:colorscheme railscasts
+"colorscheme elflord
+"colorscheme railscasts
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+
+"##### highlight setting
 "hi Comment ctermfg=LightBlue
 hi Search cterm=NONE ctermfg=grey ctermbg=yellow
 hi Visual cterm=NONE ctermfg=grey ctermbg=yellow
@@ -86,5 +91,10 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'jimenezrick/vimerl'
 Plugin 'jpo/vim-railscasts-theme'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'valloric/youcompleteme'
 call vundle#end()            " required
 
