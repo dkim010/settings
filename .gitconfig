@@ -13,3 +13,4 @@
 [alias]
     st = status
     stat = status
+    sb = submodule
