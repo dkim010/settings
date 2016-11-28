@@ -77,11 +77,20 @@ let Tlist_Inc_Winwidth=0
 let Tlist_WinWidth = 30
 let Tlist_Exit_OnlyWindow=1
 
+"##### plugin nerdtree
+"autocmd vimenter * NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 "set mps+=<:>           " 괄호짝 찾기 기능에 사용자 괄호 종류 추가
 "
 "nmap :set hls!         " F1: Toggle hlsearch
 "nnoremap :set list!    " F2: Toggle list
+"
+"##### fold
+set foldmethod=indent
+set foldlevelstart=20
+nnoremap <space> za
+vnoremap <space> zf
 
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
