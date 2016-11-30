@@ -6,7 +6,7 @@
 # exit on error
 set -e
 
-GIT_VERSION=2.10.2
+GIT_VERSION=2.11.0
 
 # create our directories
 mkdir -p $HOME/local/bin $HOME/git_tmp
@@ -22,8 +22,8 @@ GIT_DIRNAME=git-${GIT_VERSION}
 tar xvzf ${GIT_FILENAME}.tar.gz
 cd ${GIT_DIRNAME}
 make configure
-./configure --prefix=$HOME/local && make
-cp git $HOME/local/bin/
+./configure --prefix=$HOME/local && make all
+make install
 cd ..
 
 # cleanup
