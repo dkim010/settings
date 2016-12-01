@@ -1,8 +1,8 @@
 [user]
-	name = Dongwon Kim
-	email = dongwon.kim@navercorp.com
+    name = Dongwon Kim
+    email = dongwon.kim@navercorp.com
 [core]
-	editor = vim
+    editor = vim
 [diff]
     tool = vimdiff
 [color]
@@ -13,3 +13,6 @@
 [alias]
     st = status
     stat = status
+    sb = submodule
+[credential "https://github.com"]
+    username = dkim010

@@ -4,7 +4,6 @@
 set -e
 
 ## execute runs
-./set_profile.sh
 ./mkln.sh
 
 ## install local packages
@@ -13,7 +12,7 @@ cd ~/settings/scripts/
 ./pip_local_install.sh
 ./tmux_local_install.sh
 ./htop_local_install.sh
-./powerline_local_install.sh
+./git_local_install.sh
 
 ## end
 cd ~/; ls -al
