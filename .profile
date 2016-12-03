@@ -14,7 +14,8 @@ alias l='ls'
 alias ll='ls -alh'
 
 if [[ $OSTYPE == *'linux'* ]]; then # linux
-alias ls='ls --color'
+#alias ls='ls --sort=extension --group-directories-first --color=auto --ignore="*.pyc"'
+alias ls='ls --group-directories-first --color=auto --ignore="*.pyc"'
 fi
 
 if [[ $OSTYPE == *'darwin'* ]]; then

@@ -1,0 +1,1 @@
+browsepy --directory ~/www $HOSTNAME 19877
