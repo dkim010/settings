@@ -2,7 +2,8 @@
 
 ## profile setting
 if [ ! -f ~/func_profile ]; then
-    cp settings/scripts/func_profile ~/
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    cp ${DIR}/scripts/func_profile ~/
     echo "if [ -f ~/func_profile ]; then
         . ~/func_profile
     fi" >> ~/.bashrc
