@@ -6,14 +6,15 @@
 # exit on error
 set -e
 
-PYTHON_TMP=$HOME/python2.7_tmp
+VERSION=2.7.12
+PYTHON_TMP=$HOME/python${VERSION}_tmp
 mkdir -p $PYTHON_TMP
 cd $PYTHON_TMP
 
-curl -LO http://www.python.org/ftp/python/2.7.2/Python-2.7.2.tgz
-tar zxfv Python-2.7.2.tgz
+curl -LO http://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz
+tar zxfv Python-${VERSION}.tgz
 find $PYTHON_TMP/ -type d | xargs chmod 0755
-cd Python-2.7.2
+cd Python-${VERSION}
 
 ./configure --prefix=$HOME/local
 make

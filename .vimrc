@@ -5,6 +5,21 @@ scripte utf-8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM rc
 
+" Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'vim-erlang/vim-erlang-tags'
+Plugin 'jimenezrick/vimerl'
+Plugin 'jpo/vim-railscasts-theme'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'valloric/youcompleteme'
+call vundle#end()            " required
+
 execute pathogen#infect()
 filetype plugin on
 syntax on
@@ -91,19 +106,3 @@ set foldmethod=indent
 set foldlevelstart=20
 nnoremap <space> za
 vnoremap <space> zf
-
-" Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'vim-erlang/vim-erlang-tags'
-Plugin 'jimenezrick/vimerl'
-Plugin 'jpo/vim-railscasts-theme'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
-"Plugin 'valloric/youcompleteme'
-call vundle#end()            " required
-
