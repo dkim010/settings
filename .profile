@@ -30,6 +30,7 @@ fi
 
 ## python
 alias python='python2.7'
+export PYTHONSTARTUP=$HOME/.pythonrc
 
 ## screen-256color && tmux window name
 export PROMPT_COMMAND=''
