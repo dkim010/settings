@@ -15,5 +15,5 @@ export USER=$USER-dwkim
 #export PATH=$HOME/opt/protobuf-c/bin:$PATH ## protobuf-c
 #export PATH=$HOME/opt/uncrustify/bin:$PATH ## uncrustify
 
-export P3PACK=$HOME/opt/p3pack
-. $P3PACK/source.me.bash ## hadoop
+#export P3PACK=$HOME/opt/p3pack
+#. $P3PACK/source.me.bash ## hadoop

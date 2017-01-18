@@ -6,6 +6,9 @@ set -e
 ## execute runs
 ./mkln.sh
 
+# PATH
+export PATH=$HOME/.local/bin:$HOME/local/bin:$HOME/bin:$PATH
+
 ## install local packages
 cd ~/settings/scripts/
 ./python2.7_local_install.sh
