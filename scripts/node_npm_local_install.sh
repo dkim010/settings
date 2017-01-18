@@ -17,10 +17,10 @@ cd $HOME/node_tmp
 REL=http://nodejs.org/dist
 NODE_FILENAME=node-v${NODE_VERSION}
 URL=${REL}/v${NODE_VERSION}/${NODE_FILENAME}.tar.gz
-#curl -LO $URL
+curl -LO $URL
 
 # extract files, configure, and compile
-#tar xvzf ${NODE_FILENAME}.tar.gz
+tar xvzf ${NODE_FILENAME}.tar.gz
 cd ${NODE_FILENAME}
 ./configure --prefix=$HOME/local && make install
 cd ..
