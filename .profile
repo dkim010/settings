@@ -3,7 +3,7 @@ SETTING_PATH=$(dirname "${BASH_SOURCE[0]}")
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-export LS_COLORS="di=1;34;40:ln=1;35;40:so=1;31;40:pi=1;33;40:ex=1;32;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
+export LS_COLORS="di=1;34;40:ln=1;35;40:so=1;31;40:pi=1;33;40:ex=1;32;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=34;43:"
 export GREP_OPTIONS='--color=auto'
 
 # PATH
@@ -38,5 +38,5 @@ export PROMPT_COMMAND=''
 #PS1='${debian_chroot:+($debian_chroot)}\[\033[00;36m\]\u\[\033[00;33m\]@\[\033[00;32m\]\h\[\033[00;33m\]:\[\033[00;36m\]\w\[\033[00m\]\$ '
 source $SETTING_PATH/.git-prompt.sh
 source $SETTING_PATH/.git-completion.bash
-PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi` \[\033[01;30m\]\u\[\033[01;34m\] \w\[\033[35m\]$(__git_ps1 " %s") \[\033[01;31m\]>\[\033[00m\] '
+PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi` \[\033[01;30m\]$USER\[\033[01;34m\] \w\[\033[35m\]$(__git_ps1 " %s") \[\033[01;31m\]>\[\033[00m\] '
 
