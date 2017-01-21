@@ -29,7 +29,7 @@ fi
 fi
 
 ## python
-alias python='python2.7'
+alias python='python2.7 -u'
 export PYTHONSTARTUP=$HOME/.pythonrc
 
 ## screen-256color && tmux window name
