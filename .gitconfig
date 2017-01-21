@@ -16,3 +16,5 @@
     sb = submodule
 [credential "https://github.com"]
     username = dkim010
+[credential]
+	helper = cache --timeout=3600
