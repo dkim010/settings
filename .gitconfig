@@ -18,3 +18,5 @@
     username = dkim010
 [credential]
 	helper = cache --timeout=3600
+[credential "https://oss.navercorp.com"]
+    username = dongwon-kim
