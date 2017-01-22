@@ -1,5 +1,5 @@
 ## dwkim custom bashrc
-DIR=$(dirname "${BASH_SOURCE[0]}")
+SETTING_PATH=$(dirname "${BASH_SOURCE[0]}")
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -25,12 +25,12 @@ fi
 
 ## python
 alias python='python2.7 -u'
-export PYTHONSTARTUP=$DIR/.pythonrc
+export PYTHONSTARTUP=$SETTING_PATH/.pythonrc
 
 ## screen-256color && tmux window name
 ##export PROMPT_COMMAND=''
 
 ## PS
-source $DIR/.git-prompt.sh
-source $DIR/.git-completion.bash
+source $SETTING_PATH/.git-prompt.sh
+source $SETTING_PATH/.git-completion.bash
 PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi` \[\033[01;30m\]$USER\[\033[01;34m\] \w\[\033[35m\]$(__git_ps1 " %s") \[\033[01;31m\]>\[\033[00m\] '
