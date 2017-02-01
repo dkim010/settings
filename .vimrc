@@ -4,27 +4,11 @@ scripte utf-8
 " 파일의 첫부분에 위의 2줄을 꼭 남길것.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM rc
-
-" Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'vim-erlang/vim-erlang-tags'
-Plugin 'jimenezrick/vimerl'
-Plugin 'jpo/vim-railscasts-theme'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
-"Plugin 'valloric/youcompleteme'
-call vundle#end()            " required
-
+"
 execute pathogen#infect()
 filetype plugin on
 syntax on
 
-"##### vim
 set all&                " 모든 옵션 원래대로 복원
 set nocompatible        " nocp | vim default기능들을 사용함
 set hi=1000             " 명령어 기록을 남길 갯수 지정
@@ -69,6 +53,7 @@ set ts=4 sts=4 sw=4     " tastop softtabstop shiftwidth
 " softtabstop   |       " sts   | <TAB>키를 눌렀을때 표시되는 간격
 " shiftwidth    |       " sw    | >> , << 사용시 들여쓰기 간격
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+autocmd FileType xml setlocal ts=2 sts=2 sw=2
 
 "##### search
 set hlsearch            " hls   |검색 결과 하이라이트
@@ -106,3 +91,18 @@ set foldmethod=indent
 set foldlevelstart=20
 nnoremap <space> za
 vnoremap <space> zf
+
+" Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'vim-erlang/vim-erlang-tags'
+Plugin 'jimenezrick/vimerl'
+Plugin 'jpo/vim-railscasts-theme'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'valloric/youcompleteme'
+call vundle#end()            " required
+
+"##### vim
