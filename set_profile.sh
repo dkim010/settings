@@ -9,8 +9,6 @@ if [ ! -f ~/func_profile ]; then
     fi" >> ~/.bashrc
 fi
 
-echo ". ~/settings/.profile" >> ~/.bash_profile
-
 ## profile
 . ~/.bashrc
 profile dwkim

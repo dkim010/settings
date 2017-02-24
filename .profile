@@ -8,6 +8,7 @@ export GREP_OPTIONS='--color=auto'
 
 alias l='ls'
 alias ll='ls -alh'
+alias la='ls -al'
 
 if [[ $OSTYPE == *'linux'* ]]; then # linux
     alias ls='ls --group-directories-first --color=auto --ignore="*.pyc"'

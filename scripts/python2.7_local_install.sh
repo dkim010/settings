@@ -6,7 +6,7 @@
 # exit on error
 set -e
 
-VERSION=2.7.12
+VERSION=2.7.5
 PYTHON_TMP=$HOME/python${VERSION}_tmp
 mkdir -p $PYTHON_TMP
 cd $PYTHON_TMP
@@ -16,7 +16,7 @@ tar zxfv Python-${VERSION}.tgz
 find $PYTHON_TMP/ -type d | xargs chmod 0755
 cd Python-${VERSION}
 
-./configure --prefix=$HOME/local
+./configure --prefix=$HOME/local --enable-unicode=ucs4
 make
 make install
 cd $HOME
