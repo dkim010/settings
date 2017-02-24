@@ -14,6 +14,8 @@
     st = status
     stat = status
     sb = submodule
+[push]
+    default = current
 [credential "https://github.com"]
     username = dkim010
 [credential]
