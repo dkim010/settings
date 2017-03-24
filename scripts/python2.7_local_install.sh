@@ -6,7 +6,7 @@
 # exit on error
 set -e
 
-VERSION=2.7.5
+VERSION=2.7.13
 PYTHON_TMP=$HOME/python${VERSION}_tmp
 mkdir -p $PYTHON_TMP
 cd $PYTHON_TMP
