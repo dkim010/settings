@@ -12,6 +12,9 @@ export PATH=$DIR/.local/bin:$DIR/local/bin:$DIR/bin:$DIR/../../local/bin:$PATH
 #export PATH=$DIR/opt/protobuf/bin:$PATH ## google protocol buffer 2.5.0
 #export PATH=$DIR/opt/protobuf-c/bin:$PATH ## protobuf-c
 #export PATH=$DIR/opt/uncrustify/bin:$PATH ## uncrustify
+#
+#export GOROOT=$DIR/opt/go
+#export PATH=$DIR/opt/go/bin:$PATH ## go
 
 #export P3PACK=$DIR/opt/p3pack
 #source $P3PACK/source.me.bash ## hadoop
