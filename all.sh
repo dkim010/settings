@@ -11,8 +11,7 @@ export PATH=$HOME/.local/bin:$HOME/local/bin:$HOME/bin:$PATH
 
 ## install local packages
 cd ~/settings/scripts/
-./python2.7_local_install.sh
-./pip_local_install.sh
+./pyenv_local_install.sh
 ./tmux_local_install.sh
 ./htop_local_install.sh
 ./git_local_install.sh

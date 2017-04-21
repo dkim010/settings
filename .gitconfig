@@ -15,13 +15,9 @@
     stat = status
     sb = submodule
     co = checkout
-    merge = merge --no-ff
     br = branch
 [push]
     default = current
-[pull]
-    rebase = false
-    ff = false
 [credential "https://github.com"]
     username = dkim010
 [credential]
