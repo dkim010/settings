@@ -1,5 +1,5 @@
-## settings for development environments
-### configuration files
+## Settings for development environments
+### Configuration files
 * `.bash_profile`
   * sample bash profile
 * `.profile`
@@ -14,19 +14,21 @@
   * screen configuration
 * `.git-completion.bash`
 * `.git-promt.sh`
+* `iTerm2/`
+  * iTerm2 configuration file for mac
 
-### setup scripts
+### Setup scripts
 * `set_profile.sh`
-  * to set profile when use a account with multiple users in linux
-  * use `scripts/func_profile`
+  * to set profile when multiple users share a user account in linux
+  * including `scripts/func_profile`
 * `mkln.sh`
-  * create symlink some files in your *HOME* directory
+  * to create symlink some files in your *HOME* directory
   * configuration files and util scripts
 * `all.sh`
+  * to install some packages using local install scripts
   * including `mkln.sh`
-  * install some packages using local install scripts
 
-### util scripts
+### Utilities
 * `bin/atx`
   * shortcut tmux command with some options
 * `bin/gfind`
@@ -37,8 +39,10 @@
   * to search text for specific extension
 * `bin/ofind`
   * to search text for linux kernel sources
+* `ctrl_slaves/`
+  * to command slaves in master-slave networks via ssh/rcp
 
-### local install scripts on linux environments
+### Local install scripts on linux environments
   * `scripts/git_local_install.sh`
   * `scripts/tmux_local_install.sh`
   * `scripts/htop_local_install.sh`
