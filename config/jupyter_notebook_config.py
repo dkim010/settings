@@ -1,3 +1,8 @@
+c.NotebookApp.ip = '*'
+c.NotebookApp.notebook_dir = u'/home1/irteam/users/dwkim/dev/repo/jupyter_notebook'
+c.NotebookApp.open_browser = False
+c.NotebookApp.password = u'sha1:e8198ab42b31:06f4580511e61e800059ad079f57c3edfc36db91'
+c.NotebookApp.port = 8889
 # Configuration file for jupyter-notebook.
 
 #------------------------------------------------------------------------------
@@ -58,13 +63,16 @@
 #  Ignored if allow_origin is set.
 #c.NotebookApp.allow_origin_pat = ''
 
+## Whether to allow the user to run the notebook as root.
+#c.NotebookApp.allow_root = False
+
 ## DEPRECATED use base_url
 #c.NotebookApp.base_project_url = '/'
 
 ## The base URL for the notebook server.
 #  
 #  Leading and trailing slashes can be omitted, and will automatically be added.
-#c.NotebookApp.base_url = '/ipython/'
+#c.NotebookApp.base_url = '/'
 
 ## Specify what command to use to invoke a web browser when opening the notebook.
 #  If not specified, the default browser will be determined by the `webbrowser`
@@ -73,7 +81,7 @@
 #c.NotebookApp.browser = u''
 
 ## The full path to an SSL/TLS certificate file.
-#c.NotebookApp.certfile = u'/home1/irteam/users/dwkim/.cert/mycert.pem'
+#c.NotebookApp.certfile = u''
 
 ## The full path to a certificate authority certificate for SSL/TLS client
 #  authentication.
@@ -83,7 +91,7 @@
 #c.NotebookApp.config_manager_class = 'notebook.services.config.manager.ConfigManager'
 
 ## The notebook manager class to use.
-#c.NotebookApp.contents_manager_class = 'notebook.services.contents.filemanager.FileContentsManager'
+#c.NotebookApp.contents_manager_class = 'notebook.services.contents.largefilemanager.LargeFileManager'
 
 ## Extra keyword arguments to pass to `set_secure_cookie`. See tornado's
 #  set_secure_cookie docs for details.
@@ -102,6 +110,20 @@
 
 ## The default URL to redirect to from `/`
 #c.NotebookApp.default_url = '/tree'
+
+## Disable cross-site-request-forgery protection
+#  
+#  Jupyter notebook 4.3.1 introduces protection from cross-site request
+#  forgeries, requiring API requests to either:
+#  
+#  - originate from pages served by this server (validated with XSRF cookie and
+#  token), or - authenticate with a token
+#  
+#  Some anonymous compute resources still desire the ability to run code,
+#  completely without authentication. These services can disable all
+#  authentication and security checks, with the full knowledge of what that
+#  implies.
+#c.NotebookApp.disable_check_xsrf = False
 
 ## Whether to enable MathJax for typesetting math/TeX
 #  
@@ -129,20 +151,20 @@
 ## 
 #c.NotebookApp.file_to_run = ''
 
-## Use minified JS file or not, mainly use during dev to avoid JS recompilation
+## Deprecated: Use minified JS file or not, mainly use during dev to avoid JS
+#  recompilation
 #c.NotebookApp.ignore_minified_js = False
 
 ## (bytes/sec) Maximum rate at which messages can be sent on iopub before they
 #  are limited.
-#c.NotebookApp.iopub_data_rate_limit = 0
+#c.NotebookApp.iopub_data_rate_limit = 1000000
 
-## (msg/sec) Maximum rate at which messages can be sent on iopub before they are
+## (msgs/sec) Maximum rate at which messages can be sent on iopub before they are
 #  limited.
-#c.NotebookApp.iopub_msg_rate_limit = 0
+#c.NotebookApp.iopub_msg_rate_limit = 1000
 
 ## The IP address the notebook server will listen on.
 #c.NotebookApp.ip = 'localhost'
-c.NotebookApp.ip = '*'
 
 ## Supply extra arguments that will be passed to Jinja environment.
 #c.NotebookApp.jinja_environment_options = {}
@@ -161,7 +183,7 @@ c.NotebookApp.ip = '*'
 #c.NotebookApp.kernel_spec_manager_class = 'jupyter_client.kernelspec.KernelSpecManager'
 
 ## The full path to a private key file for usage with SSL/TLS.
-#c.NotebookApp.keyfile = u'/home1/irteam/users/dwkim/.cert/mycert.key'
+#c.NotebookApp.keyfile = u''
 
 ## The login handler class to use.
 #c.NotebookApp.login_handler_class = 'notebook.auth.login.LoginHandler'
@@ -169,21 +191,26 @@ c.NotebookApp.ip = '*'
 ## The logout handler class to use.
 #c.NotebookApp.logout_handler_class = 'notebook.auth.logout.LogoutHandler'
 
-## The url for MathJax.js.
+## The MathJax.js configuration file that is to be used.
+#c.NotebookApp.mathjax_config = 'TeX-AMS-MML_HTMLorMML-full,Safe'
+
+## A custom url for MathJax.js. Should be in the form of a case-sensitive url to
+#  MathJax, for example:  /static/components/MathJax/MathJax.js
 #c.NotebookApp.mathjax_url = ''
 
 ## Dict of Python modules to load as notebook server extensions.Entry values can
-#  be used to enable and disable the loading ofthe extensions.
+#  be used to enable and disable the loading ofthe extensions. The extensions
+#  will be loaded in alphabetical order.
 #c.NotebookApp.nbserver_extensions = {}
 
 ## The directory to use for notebooks and kernels.
-c.NotebookApp.notebook_dir = u'/home1/irteam/users/dwkim/dev/jupyter/'
+#c.NotebookApp.notebook_dir = u''
 
 ## Whether to open in a browser after starting. The specific browser used is
 #  platform dependent and determined by the python standard library `webbrowser`
 #  module, unless it is overridden using the --browser (NotebookApp.browser)
 #  configuration option.
-c.NotebookApp.open_browser = False
+#c.NotebookApp.open_browser = True
 
 ## Hashed password to use for web authentication.
 #  
@@ -192,10 +219,18 @@ c.NotebookApp.open_browser = False
 #    from notebook.auth import passwd; passwd()
 #  
 #  The string should be of the form type:salt:hashed-password.
-c.NotebookApp.password = u'sha1:e8198ab42b31:06f4580511e61e800059ad079f57c3edfc36db91'
+#c.NotebookApp.password = u''
+
+## Forces users to use a password for the Notebook server. This is useful in a
+#  multi user environment, for instance when everybody in the LAN can access each
+#  other's machine though ssh.
+#  
+#  In such a case, server the notebook server on localhost is not secure since
+#  any user can connect to the notebook server via ssh.
+#c.NotebookApp.password_required = False
 
 ## The port the notebook server will listen on.
-c.NotebookApp.port = 8889
+#c.NotebookApp.port = 8888
 
 ## The number of additional ports to try if the specified port is not available.
 #c.NotebookApp.port_retries = 50
@@ -204,7 +239,7 @@ c.NotebookApp.port = 8889
 #c.NotebookApp.pylab = 'disabled'
 
 ## (sec) Time window used to  check the message and data rate limits.
-#c.NotebookApp.rate_limit_window = 1.0
+#c.NotebookApp.rate_limit_window = 3
 
 ## Reraise exceptions encountered loading server extensions?
 #c.NotebookApp.reraise_server_extension_failures = False
@@ -218,6 +253,17 @@ c.NotebookApp.port = 8889
 ## Supply SSL options for the tornado HTTPServer. See the tornado docs for
 #  details.
 #c.NotebookApp.ssl_options = {}
+
+## Supply overrides for terminado. Currently only supports "shell_command".
+#c.NotebookApp.terminado_settings = {}
+
+## Token used for authenticating first-time connections to the server.
+#  
+#  When no password is enabled, the default is to generate a new, random token.
+#  
+#  Setting to an empty string disables authentication altogether, which is NOT
+#  RECOMMENDED.
+#c.NotebookApp.token = '<generated>'
 
 ## Supply overrides for the tornado.web.Application that the Jupyter notebook
 #  uses.
@@ -293,6 +339,9 @@ c.NotebookApp.port = 8889
 #  kernel does not receive the option --debug if it given on the Jupyter command
 #  line.
 #c.KernelManager.kernel_cmd = []
+
+## Time to wait for a kernel to terminate before killing it, in seconds.
+#c.KernelManager.shutdown_wait_time = 5.0
 
 #------------------------------------------------------------------------------
 # Session(Configurable) configuration
@@ -385,7 +434,7 @@ c.NotebookApp.port = 8889
 #c.Session.unpacker = 'json'
 
 ## Username for the Session. Default is your system username.
-#c.Session.username = u'irteam'
+#c.Session.username = u'irteam-dwkim'
 
 #------------------------------------------------------------------------------
 # MultiKernelManager(LoggingConfigurable) configuration
@@ -456,6 +505,9 @@ c.NotebookApp.port = 8889
 #  - contents_manager: this ContentsManager instance
 #c.ContentsManager.pre_save_hook = None
 
+## 
+#c.ContentsManager.root_dir = '/'
+
 ## The base name used when creating untitled directories.
 #c.ContentsManager.untitled_directory = 'Untitled Folder'
 
@@ -525,10 +577,6 @@ c.NotebookApp.port = 8889
 ## The hashing algorithm used to sign notebooks.
 #c.NotebookNotary.algorithm = 'sha256'
 
-## The number of notebook signatures to cache. When the number of signatures
-#  exceeds this value, the oldest 25% of signatures will be culled.
-#c.NotebookNotary.cache_size = 65535
-
 ## The sqlite file in which to store notebook signatures. By default, this will
 #  be in your Jupyter data directory. You can set it to ':memory:' to disable
 #  sqlite writing to the filesystem.
@@ -539,6 +587,10 @@ c.NotebookApp.port = 8889
 
 ## The file where the secret key is stored.
 #c.NotebookNotary.secret_file = u''
+
+## A callable returning the storage backend for notebook signatures. The default
+#  uses an SQLite database.
+#c.NotebookNotary.store_factory = traitlets.Undefined
 
 #------------------------------------------------------------------------------
 # KernelSpecManager(LoggingConfigurable) configuration
