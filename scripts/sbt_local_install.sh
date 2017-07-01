@@ -8,7 +8,7 @@ mkdir -p ${SBT_BIN}
 
 cd ${SBT_BIN}
 VER=0.13.11
-#curl -LO https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/${VER}/sbt-launch.jar
+curl -LO https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/${VER}/sbt-launch.jar
 
 echo "#!/bin/bash
 SBT_OPTS=\"-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M\"

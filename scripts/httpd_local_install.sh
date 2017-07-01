@@ -3,6 +3,8 @@
 # exit on error
 set -e
 
+mkdir -p $HOME/opt
+
 VERSION=2.4.25
 TARGET=httpd-$VERSION
 DST=$HOME/opt/$TARGET-bin
@@ -49,8 +51,7 @@ sed -e "s/User daemon/User $LOGIN/" \
 echo "------------------- $DST/bin/apachectl is now available.-----------------"
 echo "Insert the httpd-bin dirs to PATH."
 echo "example)"
-echo "export \$HTTPD=$DST/bin"
-echo "export \$PATH=\$HTTPD:\$PATH"
+echo "export PATH=$DST/bin:\$PATH"
 echo "------------------- Configuration -----------------"
 echo 'You can change the belows'
 echo '* DocumentRoot ...'
