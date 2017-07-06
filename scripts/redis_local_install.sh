@@ -14,10 +14,9 @@ cd $HOME/redis_tmp
 #############
 # reids #
 #############
-wget wget http://download.redis.io/releases/redis-stable.tar.gz
+wget http://download.redis.io/releases/redis-stable.tar.gz
 tar xf redis-stable.tar.gz
 cd redis-stable
-./configure --prefi=$HOME/local
 PREFIX=$HOME/local make
 PREFIX=$HOME/local make test
 PREFIX=$HOME/local make install
