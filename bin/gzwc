@@ -1,0 +1,4 @@
+#!/bin/bash
+for FILE in `find . -name "*.gz"`; do
+    echo "`gzcat $FILE | wc -l` $FILE"
+done
