@@ -14,7 +14,10 @@ pip install jupyter
 jupyter notebook --generate-config
 
 pip install jupyterthemes
-jt -t onedork -fs 10 -f dejavu -cellw 1240 -lineh 140
+# dark theme
+#jt -t onedork -fs 10 -f dejavu -cellw 1240 -lineh 140
+# white theme
+jt -t grade3 -fs 9 -f dejavu -cellw 1200 -lineh 120
 
 echo 'Installation for jupyter & themes is complete'
 echo 'Setup jupyter config (\$HOME/.jupyter/jupyter_notebook_config.py)'

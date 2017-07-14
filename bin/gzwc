@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ ! -z "$1" ]; then
+    DIR=$1
+else
+    DIR=.
+fi
+
+for FILE in `find $DIR -name "*.gz"`; do
+    echo "`gzcat $FILE | wc -l` $FILE"
+done
