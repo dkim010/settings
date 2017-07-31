@@ -1,4 +1,4 @@
-## dwkim custom bashrc
+## custom bashrc
 SETTING_PATH=$(dirname "${BASH_SOURCE[0]}")
 
 export CLICOLOR=1

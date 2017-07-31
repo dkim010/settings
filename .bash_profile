@@ -1,7 +1,7 @@
 ## source default profile
 DIR=$(dirname "${BASH_SOURCE[0]}")
 source $DIR/settings/.profile
-export USER=$USER-dwkim
+export USER=$USER-`cat $HOME/.user`
 
 ## path
 export PATH=$DIR/.local/bin:$DIR/local/bin:$DIR/bin:$DIR/../../local/bin:$PATH
@@ -25,4 +25,6 @@ export PATH=$DIR/.local/bin:$DIR/local/bin:$DIR/bin:$DIR/../../local/bin:$PATH
 
 ## p3pack
 #export P3PACK=$DIR/opt/p3pack
-#source $P3PACK/source.me.bash ## hadoop
+
+## c3pack
+#export C3PACK=$HOME/opt/c3pack
