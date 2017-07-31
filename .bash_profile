@@ -13,12 +13,15 @@ export PATH=$DIR/.local/bin:$DIR/local/bin:$DIR/bin:$DIR/../../local/bin:$PATH
 ## apache
 #export PATH=$DIR/opt/ant/bin:$PATH ## apache ant
 #export PATH=$DIR/opt/maven/bin:$PATH ## apache maven
-#export PATH=$HOME/opt/httpd-2.4.25-bin/bin:$PATH
+#export PATH=$DIR/opt/httpd-2.4.25-bin/bin:$PATH ## apache httpd
 
 ## protobuf
 #export PATH=$DIR/opt/protobuf/bin:$PATH ## google protocol buffer 2.5.0
 #export PATH=$DIR/opt/protobuf-c/bin:$PATH ## protobuf-c
 #export PATH=$DIR/opt/uncrustify/bin:$PATH ## uncrustify
+
+## presto
+export PATH=$HOME/opt/presto/bin:$PATH
 
 ## go
 #export GOROOT=$DIR/opt/go
@@ -32,6 +35,3 @@ export PATH=$DIR/.local/bin:$DIR/local/bin:$DIR/bin:$DIR/../../local/bin:$PATH
 
 ## c3pack
 #export C3PACK=$HOME/opt/c3pack
-
-## presto
-export PATH=$HOME/opt/presto/bin:$PATH
