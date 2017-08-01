@@ -1,0 +1,21 @@
+#!/bin/bash
+TMUX="/usr/bin/tmux -f $HOME/.tmux.conf"
+TMUX_VERSION=`$TMUX -V`
+TMUX_NAME=$1
+
+if [[ $TMUX_NAME == "ls" ]]; then
+    $TMUX ls
+else
+
+    if [[ "$TMUX_VERSION" > "tmux 1.6" ]]; then
+        $TMUX new-session -A -s $TMUX_NAME
+    else
+        TMUX_LS=`$TMUX ls | grep $TMUX_NAME`
+        echo $TMUX_LS
+        if [[ $TMUX_LS == *$TMUX_NAME* ]]; then
+            $TMUX a -t $TMUX_NAME
+        else
+            $TMUX new -s $TMUX_NAME
+        fi
+    fi
+fi
