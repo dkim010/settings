@@ -20,6 +20,10 @@ export PATH=$DIR/.local/bin:$DIR/local/bin:$DIR/bin:$DIR/../../local/bin:$PATH
 #export PATH=$DIR/opt/protobuf-c/bin:$PATH ## protobuf-c
 #export PATH=$DIR/opt/uncrustify/bin:$PATH ## uncrustify
 
+## protoc
+export PATH=$HOME/opt/protoc/bin:$PATH
+export PROTOC_INCLUDE=$HOME/opt/protoc/include
+
 ## presto
 export PATH=$HOME/opt/presto/bin:$PATH
 
