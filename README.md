@@ -25,6 +25,9 @@
 * git-completion
   * https://github.com/git/git/tree/master/contrib/completion
   * without submodule
+* `$HOME/.custom.gitconfig`
+  * personal git configuration
+  * **You should write this file to push a commit with your name and e-mail address**
 
 ### Utilities
 * `bin/{a|o}tx`
