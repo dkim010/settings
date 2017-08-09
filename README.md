@@ -1,60 +1,47 @@
 ## Settings for development environments
-### Configuration files
-* `.bash_profile`
-  * sample bash profile
-* `.profile`
-  * base bash profile
-* `.vimrc`
-  * vimrc
-* `.pythonrc`
-  * python startup script
-* `tmux.conf`
-  * tmux configuration
-* `.screenrc`
-  * screen configuration
-* `.git-completion.bash`
-* `.git-promt.sh`
-* `iTerm2/`
-  * iTerm2 configuration file for mac
-
 ### Setup scripts
-* `set_profile.sh`
+* `. set_profile.sh [USERNAME]`
   * to set profile when multiple users share a user account in linux
   * including `scripts/func_profile`
+  * the *USERNAME* will be written in `$HOME/.user`
+  * the file will be used for your tmux socket name
 * `mkln.sh`
-  * to create symlink some files in your *HOME* directory
-  * configuration files and util scripts
+  * to create symlink some files in your new *HOME* directory
+  * linking configuration files and util scripts
 * `all.sh`
   * to install some packages using local install scripts
   * including `mkln.sh`
+* `git sb init && git sb update`
+  * for vim!
+
+### Configuration files
+* `.bash_profile`: sample bash profile
+* `.profile`: basic bash profile
+* `.vimrc`
+  * `.vim`
+* `.pythonrc` : python startup script
+* `tmux.conf`
+* `.screenrc`
+* git-completion
+  * https://github.com/git/git/tree/master/contrib/completion
+  * without submodule
 
 ### Utilities
-* `bin/atx`
+* `bin/{a|o}tx`
   * shortcut tmux command with some options
-* `bin/gfind`
-  * to search text via find/grep
-* `bin/nfind`
-  * to search text in file names
-* `bin/xfind`
-  * to search text for specific extension
-* `bin/ofind`
-  * to search text for linux kernel sources
-* `ctrl_slaves/`
-  * to command slaves in master-slave networks via ssh/rcp
+  * a: with your tmux socket
+  * o: without the specific tmux socket
+* `bin/gzwc`
+  * gzcat with `wc -l`
+* `bin/{n|g|x|o}find`
+  * shortcut to search text
+  * n: search file names
+  * g: search contents
+  * x: search contents for specific extension
+  * o: search contents for linux kernel sources compiled
 
 ### Local install scripts on linux environments
-  * `scripts/git_local_install.sh`
-  * `scripts/tmux_local_install.sh`
-  * `scripts/htop_local_install.sh`
-  * `scripts/leveldb_local_install.sh`
-  * `scripts/pyenv_local_install.sh`
-    * ~~`pip_local_install.sh`~~
-    * ~~`python2.7_local_install.sh`~~
-  * `scripts/sbt_local_install.sh`
-  * `scripts/golang_local_install.sh`
-  * `scripts/node_npm_local_install.sh`
-  * `scripts/memcached_local_install.sh`
-  * `scripts/redis_local_install.sh`
+  * `scripts/`
 
 ---
-_Created at 19-Apr-16 by Dongwon Kim (dkim010@gmail.com)_
+_from at 19-Apr-16_
