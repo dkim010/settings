@@ -18,6 +18,6 @@ else
     . ~/.bashrc
 
     echo $USER_NAME > $DIR/.user
-    profile $1
-    ln -s $DIR/.user $HOME/.user
+    ln -s $DIR/.user $HOME/users/$USER_NAME/.user
+    profile $USER_NAME
 fi
