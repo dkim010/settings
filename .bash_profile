@@ -31,11 +31,14 @@ export PATH=$HOME/opt/presto/bin:$PATH
 #export GOROOT=$DIR/opt/go
 #export PATH=$DIR/opt/go/bin:$PATH ## go
 
+## parallel
+#export PATH=$HOME/opt/parallel/bin:$PATH
+
 ## gradle
 #export PATH=$DIR/opt/gradle/bin:$PATH
 
-## p3pack
+## Hadoop
+### p3pack
 #export P3PACK=$DIR/opt/p3pack
-
-## c3pack
+### c3pack
 #export C3PACK=$HOME/opt/c3pack
