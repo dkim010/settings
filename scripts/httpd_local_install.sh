@@ -5,17 +5,19 @@ set -e
 
 mkdir -p $HOME/opt
 
-VERSION=2.4.25
+VERSION=2.4.29
 TARGET=httpd-$VERSION
 DST=$HOME/opt/$TARGET-bin
+APR_VERSION=1.6.3
+APR_UTIL_VERSION=1.6.1
 
 function download(){
     cd $HOME/opt
     curl -LO http://mirror.navercorp.com/apache//httpd/${TARGET}.tar.bz2
     tar xf ${TARGET}.tar.bz2
 
-    curl -LO http://apache.mirror.cdnetworks.com//apr/apr-1.6.2.tar.gz
-    curl -LO http://apache.mirror.cdnetworks.com//apr/apr-util-1.6.0.tar.gz
+    curl -LO http://apache.mirror.cdnetworks.com//apr/apr-${APR_VERSION}.tar.gz
+    curl -LO http://apache.mirror.cdnetworks.com//apr/apr-util-${APR_UTIL_VERSION}.tar.gz
 }
 
 function install(){
@@ -23,11 +25,11 @@ function install(){
 
     # install apr
     cd srclib
-    tar xf ../../apr-1.6.2.tar.gz
-    mv apr-1.6.2 apr
+    tar xf ../../apr-${APR_VERSION}.tar.gz
+    mv apr-${APR_VERSION} apr
     # install apr-util
-    tar xf ../../apr-util-1.6.0.tar.gz
-    mv apr-util-1.6.0 apr-util
+    tar xf ../../apr-util-${APR_UTIL_VERSION}.tar.gz
+    mv apr-util-${APR_UTIL_VERSION} apr-util
     # pcre -> yum install pcre-devel
 
     cd ..
