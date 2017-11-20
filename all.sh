@@ -1,10 +1,10 @@
 #!/bin/bash
 ## Requirements: Before installation, you should check your $HOME.
 
-set -e
-
 ## execute runs
 ./mkln.sh
+
+set -e
 
 # PATH
 export PATH=$HOME/.local/bin:$HOME/local/bin:$HOME/bin:$PATH
