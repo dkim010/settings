@@ -8,21 +8,22 @@
 set -e
 
 # create our directories
-mkdir -p $HOME/local/bin $HOME/redis_tmp
-cd $HOME/redis_tmp
+DST=$HOME/opt/redis
+mkdir -p $DST $HOME/redis_tmp
 
 #############
 # reids #
 #############
+cd $HOME/redis_tmp
 wget http://download.redis.io/releases/redis-stable.tar.gz
 tar xf redis-stable.tar.gz
 cd redis-stable
-PREFIX=$HOME/local make
-PREFIX=$HOME/local make test
-PREFIX=$HOME/local make install
+PREFIX=$DST make
+PREFIX=$DST make test
+PREFIX=$DST make install
 cd ..
 
 # cleanup
 rm -rf $HOME/redis_tmp
 
-echo "$HOME/local/bin/redis is now available. You can optionally add $HOME/local/bin to your PATH."
+echo "$DST is now available. You can optionally add $DST to your PATH."
