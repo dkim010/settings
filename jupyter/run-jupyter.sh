@@ -3,4 +3,6 @@
 jt -t chesterish -fs 9 -f dejavu -cellw 1200 -lineh 120 -T
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-CUDA_VISIBLE_DEVICES=$JUPYTER_GPU jupyter notebook --config $DIR/jupyter_notebook_config.py
+CUDA_VISIBLE_DEVICES=$JUPYTER_GPU jupyter notebook \
+    --config $DIR/jupyter_notebook_config.py \
+    --port 10080

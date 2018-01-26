@@ -3,7 +3,6 @@ c.NotebookApp.ip = '*'
 c.NotebookApp.notebook_dir = '{}/dev/repo/jupyter'.format(os.environ['HOME'])
 c.NotebookApp.open_browser = False
 c.NotebookApp.password = 'sha1:d21cce9c7040:b74ab9ec84f4331e303a920a1216399b5acaec43'
-c.NotebookApp.port = 8890
 
 # Configuration file for jupyter-notebook.
 
