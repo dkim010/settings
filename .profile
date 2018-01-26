@@ -12,7 +12,7 @@ alias ll='ls -alh'
 alias la='ls -al'
 
 if [[ $OSTYPE == *'linux'* ]]; then # linux
-    alias ls='ls --group-directories-first --color=auto --ignore="*.pyc"'
+    alias ls='ls --group-directories-first --color=auto --ignore="*.pyc" --ignore="__pycache__"'
 fi
 
 if [[ $OSTYPE == *'darwin'* ]]; then
