@@ -62,9 +62,9 @@ make PYTHONCFLAGS="$PYTHONCFLAGS" -j8
 make PYTHONCFLAGS="$PYTHONCFLAGS" -j8 py
 
 # build faiss-gpu
-cd gpu
-make PYTHONCFLAGS="$PYTHONCFLAGS" -j8
-make PYTHONCFLAGS="$PYTHONCFLAGS" -j8 py
+#cd gpu
+#make PYTHONCFLAGS="$PYTHONCFLAGS" -j8
+#make PYTHONCFLAGS="$PYTHONCFLAGS" -j8 py
 
 # info
 echo 
