@@ -3,6 +3,11 @@ DIR=$(dirname "${BASH_SOURCE[0]}")
 source $DIR/settings/.profile
 export USER=$USER-`cat $HOME/.user`
 
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 ## path
 export PATH=$DIR/.local/bin:$DIR/local/bin:$DIR/bin:$DIR/../../local/bin:$PATH
 #export LIBRARY_PATH=$HOME/.local/lib:$LIBRARY_PATH
