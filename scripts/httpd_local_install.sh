@@ -16,8 +16,8 @@ function download(){
     curl -LO http://mirror.navercorp.com/apache//httpd/${TARGET}.tar.bz2
     tar xf ${TARGET}.tar.bz2
 
-    curl -LO http://apache.mirror.cdnetworks.com//apr/apr-${APR_VERSION}.tar.gz
-    curl -LO http://apache.mirror.cdnetworks.com//apr/apr-util-${APR_UTIL_VERSION}.tar.gz
+    curl -LO http://mirror.navercorp.com/apache/apr/apr-${APR_VERSION}.tar.gz
+    curl -LO http://mirror.navercorp.com/apache/apr/apr-util-${APR_UTIL_VERSION}.tar.gz
 }
 
 function install(){
