@@ -7,21 +7,21 @@
 # exit on error
 set -e
 
-HTOP_VERSION=2.0.2
+HTOP_VERSION=2.2.0
 
 # create our directories
 mkdir -p $HOME/local/bin $HOME/htop_tmp
 cd $HOME/htop_tmp
 
 # download source files for htop
-REL=https://hisham.hm/htop/releases
+REL=https://github.com/hishamhm/htop/archive
 HTOP_FILENAME=htop-${HTOP_VERSION}
-wget -O ${HTOP_FILENAME}.tar.gz ${REL}/${HTOP_VERSION}/${HTOP_FILENAME}.tar.gz
+wget -O ${HTOP_FILENAME}.tar.gz ${REL}/${HTOP_VERSION}.tar.gz
 
 # extract files, configure, and compile
 tar xvzf ${HTOP_FILENAME}.tar.gz
 cd ${HTOP_FILENAME}
-./configure --prefix=$HOME/local && make
+./autogen.sh && ./configure --prefix=$HOME/local && make
 cp htop $HOME/local/bin/
 cd ..
 
