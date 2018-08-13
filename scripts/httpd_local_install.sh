@@ -5,7 +5,7 @@ set -e
 
 mkdir -p $HOME/opt
 
-VERSION=2.4.29
+VERSION=2.4.34
 TARGET=httpd-$VERSION
 DST=$HOME/opt/$TARGET-bin
 APR_VERSION=1.6.3
