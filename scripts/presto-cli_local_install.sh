@@ -5,7 +5,7 @@ set -e
 
 # https://prestodb.io/docs/current/installation/cli.html
 
-VERSION=0.181
+VERSION=0.208
 REPO=https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/$VERSION
 ARCHIVE=presto-cli-${VERSION}-executable.jar
 
@@ -15,3 +15,5 @@ cd $HOME/opt/presto/bin
 curl -LO $REPO/$ARCHIVE
 chmod +x $ARCHIVE
 ln -s $ARCHIVE presto
+
+echo 'e.g., export PATH=$PATH:$HOME/opt/presto/bin'
