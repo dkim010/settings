@@ -3,7 +3,7 @@
 # exit on error
 set -e
 
-VERSION=3.1
+VERSION=4.10
 REPO=https://services.gradle.org/distributions
 ARCHIVE=gradle-${VERSION}-bin.zip
 
