@@ -1,5 +1,5 @@
 #!/bin/bash
-USER_NAME=`cat $HOME/.user`
+USER_NAME=$USER
 TMUX_VERSION=`tmux -V`
 TMUX_NAME=$1
 TMUX_SOCKET_NAME=${USER_NAME}_sock

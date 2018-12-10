@@ -1,7 +1,9 @@
 ## source default profile
 DIR=$(dirname "${BASH_SOURCE[0]}")
 source $DIR/settings/.profile
-export USER=$USER-`cat $HOME/.user`
+if [ -f $HOME/.user ]; then
+    export USER=$USER-`cat $HOME/.user`
+fi
 
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
@@ -47,3 +49,9 @@ export PATH=$HOME/opt/presto/bin:$PATH
 #export P3PACK=$DIR/opt/p3pack
 ### c3pack
 #export C3PACK=$HOME/opt/c3pack
+
+## python
+export PYTHONSTARTUP=$HOME/.pythonrc
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
