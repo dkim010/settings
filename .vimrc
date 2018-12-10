@@ -25,8 +25,8 @@ colorscheme solarized
 "hi Comment ctermfg=LightBlue
 hi Search cterm=NONE ctermfg=grey ctermbg=yellow
 hi Visual cterm=NONE ctermfg=grey ctermbg=yellow
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
-execute "set colorcolumn=" . join(range(81,335), ',')
+"highlight ColorColumn ctermbg=235 guibg=#2c2d27
+"execute "set colorcolumn=" . join(range(81,335), ',')
 
 "##### view
 set number              " nu   | 줄 번호 붙임
@@ -79,6 +79,7 @@ let Tlist_Exit_OnlyWindow=1
 
 "##### plugin nerdtree
 "autocmd vimenter * NERDTree
+let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
 
 "set mps+=<:>           " 괄호짝 찾기 기능에 사용자 괄호 종류 추가
