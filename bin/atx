@@ -4,21 +4,17 @@ TMUX_VERSION=`tmux -V`
 TMUX_NAME=$1
 TMUX_SOCKET_NAME=${USER_NAME}_sock
 
-if [[ "$TMUX_VERSION" > "tmux 1.6" ]]
-then
-    if [[ $TMUX_NAME == "ls" ]]
-    then
-        tmux -L $TMUX_SOCKET_NAME ls
-    else
-        tmux -L $TMUX_SOCKET_NAME new-session -A -s $TMUX_NAME
-    fi
+if [[ $TMUX_NAME == "ls" ]]; then
+    tmux -L $TMUX_SOCKET_NAME ls
 else
-    TMUX_LS=`tmux ls | grep $TMUX_NAME`
-    echo $TMUX_LS
-    if [[ $TMUX_LS == *$TMUX_NAME* ]]
-    then
-        tmux -L $TMUX_SOCKET_NAME a -t $TMUX_NAME
+    if [[ "$TMUX_VERSION" > "tmux 1.6" ]]; then
+        tmux -L $TMUX_SOCKET_NAME new-session -D -A -s $TMUX_NAME
     else
-        tmux -L $TMUX_SOCKET_NAME new -s $TMUX_NAME
+        TMUX_LS=`tmux ls | grep $TMUX_NAME`
+        if [[ $TMUX_LS == *$TMUX_NAME* ]]; then
+            tmux -L $TMUX_SOCKET_NAME a -dt $TMUX_NAME
+        else
+            tmux -L $TMUX_SOCKET_NAME new -s $TMUX_NAME
+        fi
     fi
 fi
