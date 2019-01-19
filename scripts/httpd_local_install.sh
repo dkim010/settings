@@ -5,10 +5,10 @@ set -e
 
 mkdir -p $HOME/opt
 
-VERSION=2.4.34
+VERSION=2.4.37
 TARGET=httpd-$VERSION
 DST=$HOME/opt/$TARGET-bin
-APR_VERSION=1.6.3
+APR_VERSION=1.6.5
 APR_UTIL_VERSION=1.6.1
 
 function download(){
