@@ -35,6 +35,7 @@ cd ..
 ############
 tar xvzf ncurses-5.9.tar.gz
 cd ncurses-5.9
+export CPPFLAGS="$CPPFLAGS -P"
 ./configure --prefix=$HOME/local
 make
 make install

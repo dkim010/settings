@@ -6,7 +6,7 @@
 # exit on error
 set -e
 
-GIT_VERSION=2.11.0
+GIT_VERSION=2.20.1
 
 # create our directories
 mkdir -p $HOME/local/bin $HOME/git_tmp
