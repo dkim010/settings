@@ -1,36 +1,29 @@
-PROFILE_PATH_HOME=${HOME}/users # �~P신�~]~X �~D이�~T~T�~\ �~@경�~U~X십�~K~\�XXPROFILE_PATH_HOME=${HOME}/users
-
 unset profile
-
 function profile() {
-        PROFILE_USERID=${PROFILE_DEFAULT_USER}
+    PROFILE_PATH_HOME=${HOME}/users
+    if [ $1 == '--help' ]; then
+        echo "Change User's profile"
+        echo "Usage : profile [user_id]"
+        return ;
+    fi
 
-        if [ $# -ge 1 ]; then
-                if [ $1 == '--help' ]; then
-                        echo "Change User's profile"
-                        echo "Usage : profile [user_id]"
-                        echo "Options :"
-                        echo -e "user_id\tUser ID [default : '${PROFILE_USERID}']"
-                        echo -e "--help\tThis help"
+    if [ $# -ge 1 ]; then
+        PROFILE_USERID=$1
+    else
+        echo "Error: Insert user ID"
+        return ;
+    fi
 
-                        unset PROFILE_USERID
-                        return ;
-                fi
-                PROFILE_USERID=$1
+    if [ -d "${PROFILE_PATH_HOME}/${PROFILE_USERID}" ]; then
+        export HOME="${PROFILE_PATH_HOME}/${PROFILE_USERID}"
+        if [ -f "${PROFILE_PATH_HOME}/${PROFILE_USERID}/.bash_profile" ]; then
+            source "${PROFILE_PATH_HOME}/${PROFILE_USERID}/.bash_profile"
         fi
-
-        if [ -d "${PROFILE_PATH_HOME}/${PROFILE_USERID}" ]; then
-                export HOME="${PROFILE_PATH_HOME}/${PROFILE_USERID}"
-                if [ -f "${PROFILE_PATH_HOME}/${PROFILE_USERID}/.bash_profile" ]; then
-                        source "${PROFILE_PATH_HOME}/${PROFILE_USERID}/.bash_profile"
-                fi
-                if [ -f "${PROFILE_PATH_HOME}/${PROFILE_USERID}/.bashrc" ]; then
-                        source "${PROFILE_PATH_HOME}/${PROFILE_USERID}/.bashrc"
-                fi
-                cd ~
-        else
-                echo "Error : Cannot find user ID '${PROFILE_USERID}' '${PROFILE_PATH_HOME}'"
+        if [ -f "${PROFILE_PATH_HOME}/${PROFILE_USERID}/.bashrc" ]; then
+            source "${PROFILE_PATH_HOME}/${PROFILE_USERID}/.bashrc"
         fi
-
-        unset PROFILE_USERID
+        cd $HOME
+    else
+        echo "Error: Cannot find user ID '${PROFILE_USERID}' '${PROFILE_PATH_HOME}'"
+    fi
 }
