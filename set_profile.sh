@@ -1,4 +1,43 @@
 ## command: . set_profile.sh
+PROFILE_SCRIPT=$(cat <<- EOF
+unset profile
+function profile() {
+    PROFILE_PATH_HOME=\${HOME}/users
+    if [ \$1 == '--help' ]; then
+        echo "Change User's profile"
+        echo "Usage : profile [user_id]"
+        return ;
+    fi
+
+    if [ \$# -ge 1 ]; then
+        PROFILE_USERID=\$1
+    else
+        echo "Error: Insert user ID"
+        return ;
+    fi
+
+    if [ -d "\${PROFILE_PATH_HOME}/\${PROFILE_USERID}" ]; then
+        export HOME="\${PROFILE_PATH_HOME}/\${PROFILE_USERID}"
+        if [ -f "\${PROFILE_PATH_HOME}/\${PROFILE_USERID}/.bash_profile" ]; then
+            source "\${PROFILE_PATH_HOME}/\${PROFILE_USERID}/.bash_profile"
+        fi
+        if [ -f "\${PROFILE_PATH_HOME}/\${PROFILE_USERID}/.bashrc" ]; then
+            source "\${PROFILE_PATH_HOME}/\${PROFILE_USERID}/.bashrc"
+        fi
+        cd \$HOME
+    else
+        echo "Error: Cannot find user ID '\${PROFILE_USERID}' '\${PROFILE_PATH_HOME}'"
+    fi
+}
+EOF
+)
+
+PROFILE_IF=$(cat <<- EOF
+if [ -f ~/func_profile ]; then
+    . ~/func_profile
+fi
+EOF
+)
 
 if [ -z $1 ]; then
     echo 'insert username after make the dir users/${USER_NAME}'
@@ -8,10 +47,8 @@ else
 
     ## profile setting
     if [ ! -f ~/func_profile ]; then
-        cp ${DIR}/scripts/func_profile ~/
-        echo "if [ -f ~/func_profile ]; then
-        . ~/func_profile
-        fi" >> ~/.bashrc
+        echo -e "$PROFILE_SCRIPT" > ~/func_profile
+        echo -e "$PROFILE_IF" >> ~/.bashrc
     fi
 
     ## profile
