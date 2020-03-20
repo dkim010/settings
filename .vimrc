@@ -23,7 +23,8 @@ colorscheme solarized
 
 "##### highlight setting
 "hi Comment ctermfg=LightBlue
-hi Search cterm=NONE ctermfg=grey ctermbg=yellow
+"hi Search cterm=NONE ctermfg=grey ctermbg=yellow
+hi Search cterm=NONE ctermfg=grey ctermbg=blue
 hi Visual cterm=NONE ctermfg=grey ctermbg=yellow
 "highlight ColorColumn ctermbg=235 guibg=#2c2d27
 "execute "set colorcolumn=" . join(range(81,335), ',')
@@ -52,8 +53,12 @@ set ts=4 sts=4 sw=4     " tastop softtabstop shiftwidth
 " tabstop       |       " ts    | '\t' 문자를 몇칸으로 보일지 결정
 " softtabstop   |       " sts   | <TAB>키를 눌렀을때 표시되는 간격
 " shiftwidth    |       " sw    | >> , << 사용시 들여쓰기 간격
-autocmd FileType javascript,xml,proto,cpp,hpp setlocal ts=2 sts=2 sw=2
+autocmd FileType javascript,xml,proto,cpp,hpp,yml setlocal ts=2 sts=2 sw=2
+autocmd BufRead,BufNewFile *.yml setlocal ts=2 sts=2 sw=2
+autocmd BufRead,BufNewFile *.yaml setlocal ts=2 sts=2 sw=2
+autocmd BufRead,BufNewFile *.config setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.nomad setlocal ts=2 sts=2 sw=2
+autocmd BufRead,BufNewFile *.md setlocal ts=2 sts=2 sw=2
 
 "##### search
 set hlsearch            " hls   |검색 결과 하이라이트
@@ -68,6 +73,7 @@ function __sp()
     call winrestview(savex)
 endfunction
 nmap <C-w>v :call __sp()<CR>
+nmap <C-w>f :vertical wincmd f<CR>
 
 "##### plugin: Tlist
 map <F5> :TlistToggle<CR>
@@ -80,6 +86,7 @@ let Tlist_Exit_OnlyWindow=1
 "##### plugin nerdtree
 "autocmd vimenter * NERDTree
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.DS_Store$', '\.git$', '__pycache__$', '\.egg-info$', '\.eggs$', '\.pytest_cache$'] " ignore files in nerd tree
 map <C-n> :NERDTreeToggle<CR>
 
 "set mps+=<:>           " 괄호짝 찾기 기능에 사용자 괄호 종류 추가
@@ -93,6 +100,26 @@ set foldlevelstart=20
 nnoremap <space> za
 vnoremap <space> zf
 
+"##### plugin syntastic
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()} "add a syntastic flag to the status line
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1 "the location list is overwritten with Syntastic's own list
+"let g:syntastic_auto_loc_list = 1 "the error window will be automatically opened when errors are detected, and closed when none are detected
+"let g:syntastic_check_on_open = 1 "enable the syntax checking on file open
+"let g:syntastic_check_on_wq = 0 "disable the syntax checking on :wq
+"let g:syntastic_python_checkers = ['flake8', 'pylint'] "set python checkers to flake8 and pylint
+"let g:syntastic_mode_map = { "mode": "active"}  "set syntastic to automatically activate
+
+">> ALE
+let g:ale_linters = {
+      \ 'python': ['pylint'],
+      \ }
+let g:airline#extensions#ale#enabled = 1
+let g:ale_close_preview_on_insert = 1
+let g:ale_open_list = 1
+let g:ale_list_window_size = 3
+
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -104,6 +131,8 @@ Plugin 'jpo/vim-railscasts-theme'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 "Plugin 'valloric/youcompleteme'
+"Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 call vundle#end()            " required
 
 "##### vim
