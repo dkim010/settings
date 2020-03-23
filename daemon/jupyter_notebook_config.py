@@ -454,7 +454,7 @@ c.NotebookApp.password = 'sha1:d21cce9c7040:b74ab9ec84f4331e303a920a1216399b5aca
 #c.Session.unpacker = 'json'
 
 ## Username for the Session. Default is your system username.
-#c.Session.username = 'irteam-dwkim'
+#c.Session.username = ''
 
 #------------------------------------------------------------------------------
 # MultiKernelManager(LoggingConfigurable) configuration
