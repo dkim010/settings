@@ -16,7 +16,13 @@ function profile() {
         return ;
     fi
 
+    if [ ! -z \$PHOME ]; then
+        echo "Error: Already executed profiling"
+        return ;
+    fi
+
     if [ -d "\${PROFILE_PATH_HOME}/\${PROFILE_USERID}" ]; then
+        export PHOME="\$HOME"
         export HOME="\${PROFILE_PATH_HOME}/\${PROFILE_USERID}"
         if [ -f "\${PROFILE_PATH_HOME}/\${PROFILE_USERID}/.bash_profile" ]; then
             source "\${PROFILE_PATH_HOME}/\${PROFILE_USERID}/.bash_profile"
