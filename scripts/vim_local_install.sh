@@ -29,6 +29,7 @@ make install
 cd ..
 
 # link
+cd $HOME/opt
 ln -s $DIRNAME-bin vim
 
 # cleanup
