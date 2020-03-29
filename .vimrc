@@ -56,6 +56,7 @@ set ts=4 sts=4 sw=4     " tastop softtabstop shiftwidth
 autocmd FileType javascript,xml,proto,cpp,hpp,yml setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.yml setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.yaml setlocal ts=2 sts=2 sw=2
+autocmd BufRead,BufNewFile *.yaml setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.config setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.nomad setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.md setlocal ts=2 sts=2 sw=2
@@ -133,6 +134,7 @@ Plugin 'altercation/vim-colors-solarized'
 "Plugin 'valloric/youcompleteme'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'w0rp/ale'
+Plugin 'stephpy/vim-yaml'
 call vundle#end()            " required
 
 "##### vim
