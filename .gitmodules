@@ -25,3 +25,9 @@
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule ".vim/bundle/ale"]
+	path = .vim/bundle/ale
+	url = https://github.com/dense-analysis/ale
+[submodule ".vim/bundle/vim-yaml"]
+	path = .vim/bundle/vim-yaml
+	url = https://github.com/stephpy/vim-yaml.git

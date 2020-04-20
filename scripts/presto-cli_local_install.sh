@@ -5,7 +5,7 @@ set -e
 
 # https://prestodb.io/docs/current/installation/cli.html
 
-VERSION=0.208
+VERSION=0.214
 REPO=https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/$VERSION
 ARCHIVE=presto-cli-${VERSION}-executable.jar
 

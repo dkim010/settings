@@ -14,7 +14,7 @@ done
 
 ### scripts
 mkdir -p $USER_HOME/bin
-FILES='gfind nfind xfind ofind atx otx uenv adb_conn run_www gzwc'
+FILES='gfind nfind xfind ofind atx otx uenv adb_conn run_www gzwc dclean'
 for f in $FILES; do
     ln -s $PWD/bin/$f $USER_HOME/bin/$f
 done

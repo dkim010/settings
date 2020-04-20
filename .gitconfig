@@ -1,5 +1,6 @@
 [core]
     editor = vim
+    autocrlf = input
 [diff]
     tool = vimdiff
 [color]
