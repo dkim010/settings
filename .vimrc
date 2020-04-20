@@ -53,9 +53,8 @@ set ts=4 sts=4 sw=4     " tastop softtabstop shiftwidth
 " tabstop       |       " ts    | '\t' 문자를 몇칸으로 보일지 결정
 " softtabstop   |       " sts   | <TAB>키를 눌렀을때 표시되는 간격
 " shiftwidth    |       " sw    | >> , << 사용시 들여쓰기 간격
-autocmd FileType javascript,xml,proto,cpp,hpp,yml setlocal ts=2 sts=2 sw=2
+autocmd FileType javascript,xml,proto,cpp,hpp,html,json setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.yml setlocal ts=2 sts=2 sw=2
-autocmd BufRead,BufNewFile *.yaml setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.yaml setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.config setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.nomad setlocal ts=2 sts=2 sw=2
