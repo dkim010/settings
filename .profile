@@ -31,3 +31,13 @@ PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]âœ”"; else echo "\[\033[01;31m\]â
 
 ## screen-256color && tmux window name
 ##export PROMPT_COMMAND=''
+
+## tmux autocomplete
+_atx() {
+    local USER_NAME=$USER
+    local TMUX_SOCKET_NAME=${USER_NAME}_sock
+    local TMUX_SESSIONS=$(tmux -L $TMUX_SOCKET_NAME ls -F '#S' | xargs)
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "$TMUX_SESSIONS" -- $cur) )
+}
+complete -F _atx atx
