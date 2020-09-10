@@ -34,6 +34,14 @@ function profile() {
     else
         echo "Error: Cannot find user ID '\${PROFILE_USERID}' '\${PROFILE_PATH_HOME}'"
     fi
+
+# profile autogen
+_profile() {
+    local AVAILABLE_USERS=\$(ls \$HOME/users | xargs)
+    local cur=\${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( \$(compgen -W "\$AVAILABLE_USERS" -- \$cur) )
+}
+complete -F _profile profile
 }
 EOF
 )
