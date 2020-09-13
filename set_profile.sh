@@ -53,22 +53,25 @@ fi
 EOF
 )
 
-if [ -z $1 ]; then
-    echo 'insert username after make the dir users/${USER_NAME}'
+if [ ! -z $INIT_PROFILE ]; then
+    if [ ! -f ~/func_profile ]; then
+        echo -e "$PROFILE_SCRIPT" > ~/func_profile
+        echo -e "$PROFILE_IF" >> ~/.bashrc
+    fi
+elif [ -z $1 ]; then
+    echo 'insert userid after make the dir users/${USERID}'
 else
-    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-    USER_NAME=$1
-
+    USERID=$1
     ## profile setting
     if [ ! -f ~/func_profile ]; then
         echo -e "$PROFILE_SCRIPT" > ~/func_profile
         echo -e "$PROFILE_IF" >> ~/.bashrc
     fi
-
     ## profile
     . ~/.bashrc
-
-    echo $USER_NAME > $DIR/.user
-    ln -s $DIR/.user $HOME/users/$USER_NAME/.user
-    profile $USER_NAME
+    ## create .user
+    if [ ! -f $HOME/users/$USERID/.user ]; then
+        echo $USERID > $HOME/users/$USERID/.user
+    fi
+    profile $USERID
 fi
