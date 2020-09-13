@@ -6,6 +6,15 @@
 # exit on error
 set -e
 
+# check whether already installed
+if [ ! -z $FORCE ]; then
+    whichgit=$(type git 2>> /dev/null || echo)
+    if [[ ! -z $whichgit ]]; then
+        echo already exists
+        exit
+    fi
+fi
+
 VERSION=2.20.1
 
 # create our directories

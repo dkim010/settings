@@ -6,6 +6,15 @@
 # exit on error
 set -e
 
+# check whether already installed
+if [ ! -z $FORCE ]; then
+    whichvim=$(type vim 2>> /dev/null || echo)
+    if [[ ! -z $whichvim ]]; then
+        echo already exists
+        exit
+    fi
+fi
+
 VERSION=8.2.0430
 
 # create our directories

@@ -7,6 +7,15 @@
 # exit on error
 set -e
 
+# check whether already installed
+if [ ! -z $FORCE ]; then
+    whichtmux=$(type tmux 2>> /dev/null || echo)
+    if [[ ! -z $whichtmux ]]; then
+        echo already exists
+        exit
+    fi
+fi
+
 TMUX_VERSION=2.6
 
 # create our directories
