@@ -2,7 +2,7 @@
 
 # Script for installing tmux on systems where you don't have root access.
 # tmux will be installed in $HOME/local/bin.
-# It's assumed that wget and a C/C++ compiler are installed.
+# It's assumed that curl and a C/C++ compiler are installed.
 
 # exit on error
 set -e
@@ -14,9 +14,9 @@ mkdir -p $HOME/local/bin $HOME/tmux_tmp
 cd $HOME/tmux_tmp
 
 # download source files for tmux, libevent, and ncurses
-wget -O tmux-${TMUX_VERSION}.tar.gz https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz
-wget https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz
-wget https://ftp.gnu.org/pub/gnu/ncurses/ncurses-5.9.tar.gz
+curl -LO https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz
+curl -LO https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz
+curl -LO https://ftp.gnu.org/pub/gnu/ncurses/ncurses-5.9.tar.gz
 
 # extract files, configure, and compile
 
