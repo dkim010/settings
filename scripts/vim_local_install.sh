@@ -18,19 +18,19 @@ FILENAME=v${VERSION}
 curl -LO ${REL}/${FILENAME}.tar.gz
 
 # extract files, configure, and compile
-tar xvzf ${FILENAME}.tar.gz
 DIRNAME=vim-${VERSION}
+tar xvzf ${FILENAME}.tar.gz
 cd ${DIRNAME}
 
 # configure & build
 make configure
-./configure --prefix=$HOME/opt/$DIRNAME-bin && make all
+./configure --prefix=$HOME/opt/$DIRNAME && make all
 make install
 cd ..
 
 # link
 cd $HOME/opt
-ln -s $DIRNAME-bin vim
+ln -s $DIRNAME vim
 
 # cleanup
 rm -rf $HOME/vim_tmp
