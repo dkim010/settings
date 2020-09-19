@@ -8,7 +8,7 @@
 set -e
 
 # check whether already installed
-if [ ! -z $FORCE ]; then
+if [ -z $FORCE ]; then
     whichtmux=$(type tmux 2>> /dev/null || echo)
     if [[ ! -z $whichtmux ]]; then
         echo already exists

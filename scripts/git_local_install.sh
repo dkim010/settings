@@ -7,7 +7,7 @@
 set -e
 
 # check whether already installed
-if [ ! -z $FORCE ]; then
+if [ -z $FORCE ]; then
     whichgit=$(type git 2>> /dev/null || echo)
     if [[ ! -z $whichgit ]]; then
         echo already exists

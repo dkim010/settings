@@ -7,7 +7,7 @@
 set -e
 
 # check whether already installed
-if [ ! -z $FORCE ]; then
+if [ -z $FORCE ]; then
     whichvim=$(type vim 2>> /dev/null || echo)
     if [[ ! -z $whichvim ]]; then
         echo already exists
