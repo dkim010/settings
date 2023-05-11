@@ -7,7 +7,7 @@
 USER_HOME=~/.
 
 ### conf files
-FILES='.vim .vimrc .tmux.conf .gitconfig .pythonrc .screenrc'
+FILES='.vim .vimrc .tmux.conf .gitconfig .pythonrc .screenrc .ideavimrc'
 for f in $FILES; do
     ln -fs $PWD/$f $USER_HOME/
 done

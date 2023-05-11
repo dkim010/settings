@@ -1,0 +1,56 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" Source your .vimrc
+source ~/.vimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+script utf-8
+"ideavim actions: https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
+"# vim basic options
+set all&                " 모든 옵션 원래대로 복원
+set nocompatible        " nocp | vim default기능들을 사용함
+set hi=1000             " 명령어 기록을 남길 갯수 지정
+set sc                  " 완성중인 명령을 표시
+set bs=eol,start,indent " backspace 사용
+set si ai et            " smartindent autoindent expandtab
+set enc=utf-8
+"# window
+nnoremap <C-w>v :action SplitVertically<CR>
+"# search
+set hlsearch            " hls   |검색 결과 하이라이트
+set ic                  " 찾기에서 대소문자 구별 않음
+nnoremap gd *
+"# open
+
