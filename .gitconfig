@@ -1,22 +1,25 @@
 [core]
-    editor = vim
-    autocrlf = input
+  editor = vim
+  autocrlf = input
 [diff]
-    tool = vimdiff
+  tool = vimdiff
 [color]
-    ui = auto
-    branch = auto
-    interactive = auto
-    status = auto
+  ui = auto
+  branch = auto
+  interactive = auto
+  status = auto
 [alias]
-    st = status
-    stat = status
-    sb = submodule
-    co = checkout
-    br = branch
+  st = status
+  stat = status
+  sb = submodule
+  co = checkout
+  br = branch
+  cp = cherry-pick
 [push]
-    default = current
+  default = current
+[merge]
+  ff = no
 [credential]
-    helper = cache --timeout=3600
+  helper = store
 [include]
-	path = ~/.custom.gitconfig
+  path = ~/.custom.gitconfig
