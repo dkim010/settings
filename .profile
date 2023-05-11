@@ -6,16 +6,19 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export LS_COLORS="di=1;34;40:ln=1;35;40:so=1;31;40:pi=1;33;40:ex=1;32;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=34;43:"
 export EDITOR=vim
 
-alias l='ls'
-alias ll='ls -alh'
-alias la='ls -al'
-
 if [[ $OSTYPE == *'linux'* ]]; then # linux
     alias ls='ls --group-directories-first --color=auto --ignore="*.pyc" --ignore="__pycache__"'
+    alias l='ls'
+    alias ll='ls -alh'
+    alias la='ls -al'
 fi
 
 if [[ $OSTYPE == *'darwin'* ]]; then
     ## mac fs
+    alias ls='gls --group-directories-first --color=auto --ignore="*.pyc" --ignore="__pycache__"'
+    alias l='ls'
+    alias ll='ls -alh'
+    alias la='ls -al'
     alias lh='ll | hh'
     alias hh='iconv -c -f UTF-8-MAC -t UTF-8'
     ## bash-completion
