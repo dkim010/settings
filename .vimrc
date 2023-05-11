@@ -12,6 +12,7 @@ syntax on
 set all&                " 모든 옵션 원래대로 복원
 set nocompatible        " nocp | vim default기능들을 사용함
 set hi=1000             " 명령어 기록을 남길 갯수 지정
+set re=2                " fix a bug when opening ts files
 
 "##### colorscheme setting
 "set t_Co=256
@@ -27,7 +28,7 @@ colorscheme solarized
 hi Search cterm=NONE ctermfg=grey ctermbg=blue
 hi Visual cterm=NONE ctermfg=grey ctermbg=yellow
 "highlight ColorColumn ctermbg=235 guibg=#2c2d27
-"execute "set colorcolumn=" . join(range(81,335), ',')
+execute "set colorcolumn=" . join(range(80,335), ',')
 
 "##### view
 set number              " nu   | 줄 번호 붙임
@@ -53,12 +54,13 @@ set ts=4 sts=4 sw=4     " tastop softtabstop shiftwidth
 " tabstop       |       " ts    | '\t' 문자를 몇칸으로 보일지 결정
 " softtabstop   |       " sts   | <TAB>키를 눌렀을때 표시되는 간격
 " shiftwidth    |       " sw    | >> , << 사용시 들여쓰기 간격
-autocmd FileType javascript,xml,proto,cpp,hpp,html,json setlocal ts=2 sts=2 sw=2
+autocmd FileType hql,javascript,xml,proto,cpp,hpp,html,json setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.yml setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.yaml setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.config setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.nomad setlocal ts=2 sts=2 sw=2
-autocmd BufRead,BufNewFile *.md setlocal ts=2 sts=2 sw=2
+autocmd BufRead,BufNewFile *.md setlocal ts=4 sts=4 sw=4
+autocmd BufRead,BufNewFile *.gitconfig setlocal ts=2 sts=2 sw=2
 
 "##### search
 set hlsearch            " hls   |검색 결과 하이라이트
@@ -99,6 +101,8 @@ set foldmethod=indent
 set foldlevelstart=20
 nnoremap <space> za
 vnoremap <space> zf
+"autocmd FileType yaml,yml setlocal foldmethod=indent
+"autocmd FileType yaml,yml let yaml_syntax_folding=1
 
 "##### plugin syntastic
 "set statusline+=%#warningmsg#
@@ -115,6 +119,8 @@ vnoremap <space> zf
 let g:ale_linters = {
       \ 'python': ['pylint'],
       \ }
+"let g:ale_python_pylint_options = '--max-line-length=79 --ignore-docstrings y'
+"let g:ale_python_pylint_options = '--rcfile /path/to/pylint.rc
 let g:airline#extensions#ale#enabled = 1
 let g:ale_close_preview_on_insert = 1
 let g:ale_open_list = 1
@@ -125,8 +131,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'vim-erlang/vim-erlang-tags'
-Plugin 'jimenezrick/vimerl'
+"Plugin 'vim-erlang/vim-erlang-tags'
+"Plugin 'jimenezrick/vimerl'
 Plugin 'jpo/vim-railscasts-theme'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
@@ -134,6 +140,7 @@ Plugin 'altercation/vim-colors-solarized'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'w0rp/ale'
 Plugin 'stephpy/vim-yaml'
+Plugin 'pearofducks/ansible-vim'
 call vundle#end()            " required
 
 "##### vim
