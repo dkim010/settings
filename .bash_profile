@@ -52,6 +52,8 @@ export PATH=$HOME/opt/presto/bin:$PATH
 
 ## python
 export PYTHONSTARTUP=$HOME/.pythonrc
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if [ "$(command -v pyenv)" ]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi

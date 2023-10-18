@@ -22,14 +22,14 @@ if [[ $OSTYPE == *'darwin'* ]]; then
     alias lh='ll | hh'
     alias hh='iconv -c -f UTF-8-MAC -t UTF-8'
     ## bash-completion
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-        . $(brew --prefix)/etc/bash_completion
-    fi
+    brew_prefix=$(brew --prefix)
+    [[ -r "$brew_prefix/etc/profile.d/bash_completion.sh" ]] &&
+        . $brew_prefix/etc/profile.d/bash_completion.sh
 fi
 
 ## PS
-source $SETTING_PATH/.git-prompt.sh
-source $SETTING_PATH/.git-completion.bash
+#source $SETTING_PATH/.git-prompt.sh
+#source $SETTING_PATH/.git-completion.bash
 PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi` \[\033[01;30m\]$USER\[\033[01;34m\] \w\[\033[35m\]$(__git_ps1 " %s") \[\033[01;31m\]>\[\033[00m\] '
 
 ## screen-256color && tmux window name

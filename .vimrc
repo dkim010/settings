@@ -28,7 +28,7 @@ colorscheme solarized
 hi Search cterm=NONE ctermfg=grey ctermbg=blue
 hi Visual cterm=NONE ctermfg=grey ctermbg=yellow
 "highlight ColorColumn ctermbg=235 guibg=#2c2d27
-execute "set colorcolumn=" . join(range(80,335), ',')
+execute "set colorcolumn=" . join(range(121,335), ',')
 
 "##### view
 set number              " nu   | 줄 번호 붙임

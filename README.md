@@ -1,4 +1,5 @@
 ## Settings for development environments
+
 ### Setup scripts
 * `. set_profile.sh [USERNAME]`
   * to set profile when multiple users share a user account in linux
@@ -14,6 +15,16 @@
 * `git sb init && git sb update`
   * for vim!
 
+### Setup packages (recommended)
+```bash
+$ brew install bash bash-completion@2 tmux vim git tree htop jq
+$ cd /opt/homebrew/etc/bash_completion.d
+$ mkdir -p ../bash_completion.d.unused/
+$ mv cmake colima cpack ctest docker gapplication \
+    gdbus gio gresource gsettings limactl minikube npm tmux \
+    ../bash_completion.d.unused/
+```
+
 ### Configuration files
 * `.bash_profile`: sample bash profile
 * `.profile`: basic bash profile
@@ -22,9 +33,6 @@
 * `.pythonrc` : python startup script
 * `tmux.conf`
 * `.screenrc`
-* git-completion
-  * https://github.com/git/git/tree/master/contrib/completion
-  * without submodule
 * `$HOME/.custom.gitconfig`
   * personal git configuration
   * **You should write this file to push a commit with your name and e-mail address**
