@@ -2,9 +2,15 @@
   editor = vim
   autocrlf = input
 [diff]
+  renames = copies
   tool = vimdiff
+[color "diff"]
+  whitespace = red reverse
+[merge]
+  tool = meld
 [color]
-  ui = auto
+  ui = always
+  diff = auto
   branch = auto
   interactive = auto
   status = auto
@@ -15,6 +21,7 @@
   co = checkout
   br = branch
   cp = cherry-pick
+  df = "diff --ws-error-highlight=default,old,new"
 [push]
   default = current
 [merge]
