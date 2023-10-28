@@ -13,7 +13,7 @@ export LANGUAGE=en_US.UTF-8
 
 # aliases
 alias _ls='ls'
-if [[ $OSTYPE == *'darwin'* ]]; then
+if [[ "${OSTYPE}" == *'darwin'* ]]; then
     # mac fs
     alias _ls='gls'
     alias hh='iconv -c -f UTF-8-MAC -t UTF-8'
@@ -72,7 +72,7 @@ complete -F _atx atx
 export PYTHONSTARTUP=$HOME/.pythonrc
 if [ "$(command -v pyenv)" ]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init - --no-rebash bash)"
+    eval "$(pyenv init - --no-rehash bash)"
     # eval "$(pyenv virtualenv-init - bash | sed s/precmd/precwd/g)"
 fi
 

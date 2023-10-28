@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+import argparse
+import re
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('sqlfile', type=str, help='sqlfile path')
+    args = parser.parse_args()
+
+    with open(args.sqlfile, encoding='utf8') as stream:
+        query = stream.read()
+    pattern = re.compile(r'\{(\w+)\}')
+    for var in pattern.findall(query.lower()):
+        print(var)
+
+
+if __name__ == '__main__':
+    main()
