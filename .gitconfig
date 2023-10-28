@@ -26,7 +26,14 @@
   default = current
 [merge]
   ff = no
+[pull]
+  ff = only
+[commit]
+  gpgsign = false
 [credential]
   helper = store
+[user]
+  name = Dongwon Kim
+  email = dkim010@gmail.com
 [include]
   path = ~/.custom.gitconfig
